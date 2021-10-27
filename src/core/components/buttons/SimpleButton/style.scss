@@ -1,0 +1,16 @@
+.simple-button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    min-width: 5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: white;
+    color: #13AA52;
+    border: 1px solid #13AA52;
+    font-weight: bold;
+}
+.simple-button:hover {
+    background-color: #13AA52;
+    color: white;
+    border: 1px solid transparent;
+}

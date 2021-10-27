@@ -1,1 +1,1 @@
-export * from "./useDeviceBreakPoint"
+export * from "./useDeviceBreakPoint";

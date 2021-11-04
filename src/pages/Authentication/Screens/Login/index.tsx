@@ -1,6 +1,8 @@
-import { Line, NormalTextButton, theme } from "../../../../core/components";
+import { Line, theme } from "../../../../core/components";
+import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
 import { useDeviceBreakPoint } from "../../../../core/hooks";
+import { makeStyles } from "@mui/styles";
 import {
   useStylesPC,
   useStylesTablet,
@@ -9,7 +11,7 @@ import {
 } from "./styles";
 
 export const Login = (): JSX.Element => {
-  const { isPhone, isTablet, isExtraSmall } = useDeviceBreakPoint();
+  const { isPhone, isTablet, isExtraSmall, isPC } = useDeviceBreakPoint();
   const classesPC = useStylesPC();
   const classesTablet = useStylesTablet();
   const classesPhone = useStylesPhone();
@@ -42,25 +44,25 @@ export const Login = (): JSX.Element => {
               spellCheck={false}
             />
             <input type='password' placeholder='Password' />
-            <NormalTextButton
+            <Button
+              className='login-button'
               variant='contained'
               size='small'
               color='primary'
-              style={{ marginTop: "0.8rem", height: "0.8rem" }}
             >
               Login
-            </NormalTextButton>
+            </Button>
           </div>
           <button className='forgot-password'>Forgot Password?</button>
           <Line width='90%' />
-          <NormalTextButton
+          <Button
+            className='sign-up-button'
             variant='contained'
             size='small'
             color='secondary'
-            style={{ marginTop: "1rem", height: "0.8rem", width: "10rem" }}
           >
             Create New Account
-          </NormalTextButton>
+          </Button>
         </div>
       </div>
     </ThemeProvider>

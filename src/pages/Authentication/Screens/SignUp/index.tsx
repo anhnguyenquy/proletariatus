@@ -1,4 +1,4 @@
-import { Line, NormalTextButton, theme } from "../../../../core/components";
+import { Line, theme } from "../../../../core/components";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
 import { ReactComponent as GoogleIcon } from "../../../../media/icons/google.svg";
@@ -47,18 +47,14 @@ export const SignUp = (): JSX.Element => {
             <span>User Agreement</span>, <span>Privacy Policy</span>, and{" "}
             <span>Cookie Policy</span>.
           </div>
-          <NormalTextButton
+          <Button
+            className='join-button'
             variant='contained'
             size='small'
             color='primary'
-            style={{
-              marginTop: "1rem",
-              borderRadius: "25px",
-              padding: "0.2rem",
-            }}
           >
             Agree {`&`} Join
-          </NormalTextButton>
+          </Button>
           <div className='or-section'>
             <Line width={"7.5rem"} />
             <>or</>

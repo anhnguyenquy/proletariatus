@@ -61,7 +61,27 @@ export const useStylesExtraSmall = makeStyles({
           fontWeight: "normal",
           fontStyle: "normal",
           letterSpacing: "0.015rem"
-        }
+        },
+        "& .login-button": {
+          marginTop: "0.8rem",
+          height: "0.8rem",
+          textTransform: "none",
+          color: "white",
+          width: "15rem",
+          padding: "0.5rem",
+          borderRadius: "5px",
+          fontSize: "0.8rem",
+          fontWeight: "bold",
+          boxSizing: "content-box",
+          boxShadow: "none",
+          fontFamily: "Montserrat",
+          border: "2px solid transparent",
+          "&:hover": {
+            backgroundColor: "white",
+            color: "#13AA52",
+            border: "2px solid #13AA52",
+          },
+        },
       },
       "& .forgot-password": {
         color: "#16C172",
@@ -74,7 +94,27 @@ export const useStylesExtraSmall = makeStyles({
       },
       "& .forgot-password:hover": {
         color: "#13AA52",
-      }
+      },
+      "& .sign-up-button": {
+        marginTop: "1rem",
+        height: "0.8rem",
+        width: "10rem",
+        textTransform: "none",
+        color: "white",
+        padding: "0.5rem",
+        borderRadius: "5px",
+        fontSize: "0.8rem",
+        fontWeight: "bold",
+        boxSizing: "content-box",
+        boxShadow: "none",
+        fontFamily: "Montserrat",
+        border: "2px solid transparent",
+        "&:hover": {
+          backgroundColor: "white",
+          color: "#13AA52",
+          border: "2px solid #13AA52",
+        },
+      },
     },
   },
 });

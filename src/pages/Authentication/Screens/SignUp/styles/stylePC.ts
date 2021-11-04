@@ -42,14 +42,14 @@ export const useStylesPC = makeStyles({
         padding: "0.5rem",
         borderRadius: "5px",
         width: "15rem",
-        height: "1rem", 
+        height: "1rem",
         margin: "0.3rem",
         fontSize: "0.8rem",
         textAlign: "center",
       },
       "& input::placeholder": {
         color: "#888089",
-        letterSpacing: "0.015rem"
+        letterSpacing: "0.015rem",
       },
       "& .user-discretion": {
         fontSize: "0.65rem",
@@ -64,6 +64,25 @@ export const useStylesPC = makeStyles({
           color: "#13AA52",
         },
       },
+      "& .join-button": {
+        marginTop: "1rem",
+        borderRadius: "25px",
+        padding: "0.2rem",
+        textTransform: "none",
+        color: "white",
+        width: "15rem",
+        fontSize: "0.8rem",
+        fontWeight: "bold",
+        boxSizing: "content-box",
+        boxShadow: "none",
+        fontFamily: "Montserrat",
+        border: "2px solid transparent",
+        "&:hover": {
+          backgroundColor: "white",
+          color: "#13AA52",
+          border: "2px solid #13AA52",
+        },
+      },
       "& .or-section": {
         display: "flex",
         flexDirection: "row",
@@ -75,15 +94,15 @@ export const useStylesPC = makeStyles({
         marginBottom: "0.5rem",
       },
       "& .sign-in-prompt": {
-          fontWeight: 500,
-          fontSize: "0.8rem",
-          marginTop: "1rem",
-          "& span": {
-              color: "#16C172",
-          },
-          "& span:hover": {
-              color: "#13AA52"
-          }
+        fontWeight: 500,
+        fontSize: "0.8rem",
+        marginTop: "1rem",
+        "& span": {
+          color: "#16C172",
+        },
+        "& span:hover": {
+          color: "#13AA52",
+        },
       },
     },
   },

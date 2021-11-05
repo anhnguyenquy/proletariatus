@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Login, SignUp, PageManager } from "./pages";
+import { Login, SignUp, PageManager, HomePage } from "./pages";
 const App = () => {
   return (
     <Router>
       <div className='App'>
         <Switch>
-          {/* <Route exact={true} path='/'>
-          <HomePage />
-        </Route> */}
+          <Route exact={true} path='/'>
+            <HomePage />
+          </Route>
           <Route path='/login'>
             <Login />
           </Route>

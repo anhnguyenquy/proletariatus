@@ -178,6 +178,30 @@ export const useStyles = makeStyles({
       marginLeft: "8rem",
       marginRight: "2rem",
     },
+    //not logged in -------------------------------------------------------
+    "& .login-button": {
+      textTransform: "none",
+      border: "2px solid #13AA52",
+      width: "6rem",
+      marginLeft: "40rem",
+      marginRight: "1.5rem",
+      "&:hover": {
+        borderWidth: "2px",
+      },
+    },
+    "& .sign-up-button": {
+      textTransform: "none",
+      backgroundColor: "#16C172",
+      width: "6rem",
+      // border: "2px solid #16C172",
+      "&:hover": {
+        // border: "2px solid #16C172",
+        // backgroundColor: "white",
+        // color: "#13AA52",
+        boxShadow: "none"
+      },
+    },
+    //---------------------------------------------------------------------
     "& .popover-button": {
       width: "18rem",
       minWidth: "18rem",

@@ -100,7 +100,7 @@ export const PageManager = (): JSX.Element => {
             : classesPhone["page-manager"]
         }
       > */}
-        <NavBar current='pages' />
+        <NavBar loggedIn={true} current='pages' />
         <div className='page-content'>
           <div className='left-bar'>
             <div className='top'>

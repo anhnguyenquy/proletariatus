@@ -1,3 +1,2 @@
-export * from './SearchInput'
-export * from './Icon'
-export * from './RedirectItem'
+export * from './LoggedIn'
+export * from './NotLoggedIn'

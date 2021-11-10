@@ -10052,6 +10052,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"json-loader@npm:^0.5.7":
+  version: 0.5.7
+  resolution: "json-loader@npm:0.5.7"
+  checksum: c7d054edf7fd5338847f49008df3cdf744f64507584dff3e6d28f500604eedd9130ca1639caa61747b36ab141e7e8db0e86f8514b2244b6d8b0eb634f1154875
+  languageName: node
+  linkType: hard
+
 "json-parse-better-errors@npm:^1.0.1, json-parse-better-errors@npm:^1.0.2":
   version: 1.0.2
   resolution: "json-parse-better-errors@npm:1.0.2"
@@ -11277,6 +11284,7 @@ __metadata:
     "@types/react-router-dom": ^5.3.1
     extend-shallow: ^3.0.2
     fsevents: ^2.3.2
+    json-loader: ^0.5.7
     lodash: ^4.17.21
     material-ui-popup-state: ^2.0.0
     mixin-deep: ^2.0.1

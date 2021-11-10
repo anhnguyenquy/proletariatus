@@ -1,8 +1,16 @@
-import { NavBar } from "../../core/components"
-export const HomePage = (): JSX.Element => {
+import LoggedIn from './LoggedIn'
+import NotLoggedIn from './NotLoggedIn'
+interface Props {
+  loggedIn: boolean
+}
+
+export const HomePage = (props: Props): JSX.Element => {
+  const { loggedIn } = props
   return (
-    <div className='home-page'>
-      <NavBar loggedIn={false}/>
-    </div>
+    <>
+      {
+        loggedIn ? <LoggedIn /> : <NotLoggedIn />
+      }
+    </>
   )
 }

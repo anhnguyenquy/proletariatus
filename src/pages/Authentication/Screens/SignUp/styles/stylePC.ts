@@ -5,8 +5,8 @@ export const useStylesPC = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     backgroundColor: "#F3F2EF",
     "& .app-info": {
       display: "flex",

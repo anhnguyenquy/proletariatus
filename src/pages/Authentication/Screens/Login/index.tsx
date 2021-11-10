@@ -1,21 +1,27 @@
-import { Line, theme } from "../../../../core/components";
-import Button from "@mui/material/Button";
-import { ThemeProvider } from "@mui/material/styles";
-import { useDeviceBreakPoint } from "../../../../core/hooks";
-import { makeStyles } from "@mui/styles";
+import { Line, theme } from '../../../../core/components'
+import Button from '@mui/material/Button'
+import { ThemeProvider } from '@mui/material/styles'
+import { useDeviceBreakPoint } from '../../../../core/hooks'
+import { makeStyles } from '@mui/styles'
 import {
   useStylesPC,
   useStylesTablet,
   useStylesPhone,
   useStylesExtraSmall,
-} from "./styles";
+} from './styles'
+import { useHistory } from 'react-router-dom'
 
 export const Login = (): JSX.Element => {
-  const { isPhone, isTablet, isExtraSmall, isPC } = useDeviceBreakPoint();
-  const classesPC = useStylesPC();
-  const classesTablet = useStylesTablet();
-  const classesPhone = useStylesPhone();
-  const classesExtraSmall = useStylesExtraSmall();
+  const { isPhone, isTablet, isExtraSmall, isPC } = useDeviceBreakPoint()
+  const classesPC = useStylesPC()
+  const classesTablet = useStylesTablet()
+  const classesPhone = useStylesPhone()
+  const classesExtraSmall = useStylesExtraSmall()
+  const history = useHistory()
+  const handleLogin = () => {}
+  const handleSignUp = () => {
+    history.push('/sign-up')
+  }
   return (
     <ThemeProvider theme={theme}>
       <div
@@ -23,10 +29,10 @@ export const Login = (): JSX.Element => {
           !(isTablet || isPhone || isExtraSmall)
             ? classesPC.login
             : !(isPhone || isExtraSmall)
-            ? classesTablet.login
-            : !isPhone
-            ? classesExtraSmall.login
-            : classesPhone.login
+              ? classesTablet.login
+              : !isPhone
+                ? classesExtraSmall.login
+                : classesPhone.login
         }
       >
         <div className='app-info'>
@@ -49,6 +55,7 @@ export const Login = (): JSX.Element => {
               variant='contained'
               size='small'
               color='primary'
+              onClick={handleLogin}
             >
               Login
             </Button>
@@ -60,11 +67,12 @@ export const Login = (): JSX.Element => {
             variant='contained'
             size='small'
             color='secondary'
+            onClick={handleSignUp}
           >
             Create New Account
           </Button>
         </div>
       </div>
     </ThemeProvider>
-  );
-};
+  )
+}

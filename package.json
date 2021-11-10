@@ -17,6 +17,7 @@
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "extend-shallow": "^3.0.2",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
     "material-ui-popup-state": "^2.0.0",
     "mixin-deep": "^2.0.1",
@@ -37,7 +38,7 @@
     "yarn": "^1.22.17"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

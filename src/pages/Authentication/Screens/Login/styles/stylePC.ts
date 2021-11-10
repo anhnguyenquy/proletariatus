@@ -2,8 +2,8 @@ import { makeStyles } from "@mui/styles";
 
 export const useStylesPC = makeStyles({
   login: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     overflowX: "hidden",
     backgroundColor: "#F3F2EF",
     display: "flex",

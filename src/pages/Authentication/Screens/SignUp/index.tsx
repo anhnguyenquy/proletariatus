@@ -1,7 +1,7 @@
 import { Line, theme } from "../../../../core/components";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
-import { ReactComponent as GoogleIcon } from "../../../../media/icons/google.svg";
+import { ReactComponent as GoogleIcon } from "../../../../core/media/icons/google.svg";
 import { useDeviceBreakPoint } from "../../../../core/hooks";
 import {
   useStylesPC,

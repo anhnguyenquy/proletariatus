@@ -1,21 +1,29 @@
-import { Button, Typography } from "@mui/material";
-import { useStyles } from "./style";
+import { useHistory } from 'react-router-dom'
+import { Button, Typography } from '@mui/material'
+import { useStyles } from './style'
 
 interface Props {
-  icon?: string;
-  iconObject?: JSX.Element;
-  title: string;
-  spaceAddress?: string;
-  titleStyle?: Object;
+  icon?: string
+  iconObject?: JSX.Element
+  title: string
+  spaceAddress?: string
+  titleStyle?: Object
 }
 
 export const RedirectItem = (props: Props): JSX.Element => {
-  const { icon, iconObject, title, spaceAddress, titleStyle } = props;
-  const classes = useStyles();
+  const history = useHistory()
+  const { icon, iconObject, title, spaceAddress, titleStyle } = props
+  const classes = useStyles()
+  const handleClick = () => {
+    if (spaceAddress != undefined && spaceAddress != '') {
+      history.push(`/${spaceAddress}`)
+    }
+  }
   return (
     <Button
-      className={classes["redirect-item"]}
+      className={classes['redirect-item']}
       variant='outlined'
+      onClick={handleClick}
       startIcon={
         <>
           {
@@ -40,5 +48,5 @@ export const RedirectItem = (props: Props): JSX.Element => {
         }
       </div>
     </Button>
-  );
-};
+  )
+}

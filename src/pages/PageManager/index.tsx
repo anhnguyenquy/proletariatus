@@ -1,24 +1,24 @@
-import { Line, theme, NavBar } from "../../core/components";
-import { ThemeProvider } from "@mui/material/styles";
-import { useDeviceBreakPoint } from "../../core/hooks";
-import { FaCog } from "@react-icons/all-files/fa/FaCog";
-import IconButton from "@mui/material/IconButton";
-import { DropDownMenu } from "./components";
-import Button from "@mui/material/Button";
-import { BsPlus } from "@react-icons/all-files/bs/BsPlus";
-import { FaCircle } from "@react-icons/all-files/fa/FaCircle";
-import { FaCompass } from "@react-icons/all-files/fa/FaCompass";
-import { FaCheck } from "@react-icons/all-files/fa/FaCheck";
-import { FaUserPlus } from "@react-icons/all-files/fa/FaUserPlus";
-import fptLogo from '../../media/icons/page-logo.png'
-import { useDocumentTitle } from "../../core/hooks";
+import { Line, theme, NavBar } from '../../core/components';
+import { ThemeProvider } from '@mui/material/styles';
+import { useDeviceBreakPoint } from '../../core/hooks';
+import { FaCog } from '@react-icons/all-files/fa/FaCog';
+import IconButton from '@mui/material/IconButton';
+import { DropDownMenu } from './components';
+import Button from '@mui/material/Button';
+import { BsPlus } from '@react-icons/all-files/bs/BsPlus';
+import { FaCircle } from '@react-icons/all-files/fa/FaCircle';
+import { FaCompass } from '@react-icons/all-files/fa/FaCompass';
+import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
+import { FaUserPlus } from '@react-icons/all-files/fa/FaUserPlus';
+import fptLogo from '../../core/media/icons/page-logo.png'
+import { useDocumentTitle } from '../../core/hooks';
 import {
   useStylesPC,
   //   useStylesTablet,
   //   useStylesPhone,
   //   useStylesExtraSmall,
-} from "./styles";
-import { useEffect } from "react";
+} from './styles';
+import { useEffect } from 'react';
 
 // interface Props {
 //   ava?: string;
@@ -32,6 +32,28 @@ interface Props {
   name: string;
   hasNoti: boolean;
 }
+
+const PageItem = () => {
+  return (
+    <div className='page-item'>
+      <div className='left-stuffs'>
+        <img src={fptLogo} />
+        <div className='main-stuffs'>
+          <div className='page-name'>FPT Software</div>
+          <div className='page-info'>
+            Information Technology {`${'&'}`} Services · <span>29,000</span>{' '}
+            associates ·<span>65,523</span> followers
+          </div>
+        </div>
+      </div>
+      <div className='notifications'>
+        <i className='fas fa-globe-americas'></i>
+        <div className='title'>Notifications</div>
+      </div>
+    </div>
+  );
+};
+
 export const BottomItem = (props: Props) => {
   // const { ava, numberOfNewNotifications, pageName, pageID } = props;
   const { ava, name, hasNoti } = props;
@@ -58,46 +80,25 @@ export const BottomItem = (props: Props) => {
   );
 };
 
-const PageItem = () => {
-  return (
-    <div className='page-item'>
-      <div className='left-stuffs'>
-        <img src={fptLogo} />
-        <div className='main-stuffs'>
-          <div className='page-name'>FPT Software</div>
-          <div className='page-info'>
-            Information Technology {`${"&"}`} Services · <span>29,000</span>{" "}
-            associates ·<span>65,523</span> followers
-          </div>
-        </div>
-      </div>
-      <div className='notifications'>
-        <i className='fas fa-globe-americas'></i>
-        <div className='title'>Notifications</div>
-      </div>
-    </div>
-  );
-};
-
 export const PageManager = (): JSX.Element => {
-  const { isPhone, isTablet, isExtraSmall } = useDeviceBreakPoint();
+  const { isPhone, isTablet, isExtraSmall } = useDeviceBreakPoint()
   const classesPC = useStylesPC();
   //   const classesTablet = useStylesTablet();
   //   const classesPhone = useStylesPhone();
   //   const classesExtraSmall = useStylesExtraSmall();
-  useDocumentTitle("Pages | Placeholder");
+  useDocumentTitle('Pages | Placeholder');
   return (
     <ThemeProvider theme={theme}>
-      <div className={classesPC["page-manager"]}>
+      <div className={classesPC['page-manager']}>
         {/* <div
         className={
           !(isTablet || isPhone || isExtraSmall)
-            ? classesPC["page-manager"]
+            ? classesPC['page-manager']
             : !(isPhone || isExtraSmall)
-            ? classesTablet["page-manager"]
+            ? classesTablet['page-manager']
             : !isPhone
-            ? classesExtraSmall["page-manager"]
-            : classesPhone["page-manager"]
+            ? classesExtraSmall['page-manager']
+            : classesPhone['page-manager']
         }
       > */}
         <NavBar loggedIn={true} current='pages' />

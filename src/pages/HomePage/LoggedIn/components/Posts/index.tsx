@@ -1,9 +1,16 @@
 import PostItem from './PostItem'
-import { useEffect } from 'react'
 
 export const Posts = (): JSX.Element => {
   return (
     <div className='posts'>
+      <div className='create-post-bar'>
+        <div className='ava-container'>
+          <i className='fas fa-user-circle' />
+        </div>
+        <div className='input-container'>
+          <input type='text' spellCheck={false} placeholder='Create Post' />
+        </div>
+      </div>
       <PostItem
         voteVisible={false}
         space='s/ComputerScience'

@@ -175,7 +175,7 @@ export const useStyles = makeStyles({
       marginRight: '0rem',
       '& .icon-container': {
         width: '100%',
-        height: '100%',
+        height: 'calc(3rem - 2px)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -210,7 +210,7 @@ export const useStyles = makeStyles({
 
       '& .icon-container': {
         width: '100%',
-        height: '100%',
+        height: 'calc(3rem - 2px)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

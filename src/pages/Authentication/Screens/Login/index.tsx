@@ -1,15 +1,16 @@
 import { Line, theme } from '../../../../core/components'
 import Button from '@mui/material/Button'
+import LoadingButton from '@mui/lab/LoadingButton'
 import { ThemeProvider } from '@mui/material/styles'
 import { useDeviceBreakPoint } from '../../../../core/hooks'
-import { makeStyles } from '@mui/styles'
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import {
   useStylesPC,
   useStylesTablet,
   useStylesPhone,
   useStylesExtraSmall,
 } from './styles'
-import { useHistory } from 'react-router-dom'
 
 export const Login = (): JSX.Element => {
   const { isPhone, isTablet, isExtraSmall, isPC } = useDeviceBreakPoint()
@@ -18,7 +19,10 @@ export const Login = (): JSX.Element => {
   const classesPhone = useStylesPhone()
   const classesExtraSmall = useStylesExtraSmall()
   const history = useHistory()
-  const handleLogin = () => {}
+  const [loggingIn, setLoggingIn] = useState(false)
+  const handleLogin = () => {
+    setLoggingIn(true)
+  }
   const handleSignUp = () => {
     history.push('/sign-up')
   }
@@ -50,15 +54,16 @@ export const Login = (): JSX.Element => {
               spellCheck={false}
             />
             <input type='password' placeholder='Password' />
-            <Button
+            <LoadingButton
               className='login-button'
               variant='contained'
               size='small'
               color='primary'
+              loading={loggingIn}
               onClick={handleLogin}
             >
               Login
-            </Button>
+            </LoadingButton>
           </div>
           <button className='forgot-password'>Forgot Password?</button>
           <Line width='90%' />

@@ -5,7 +5,7 @@ export const useStyles = makeStyles({
     border: '1.5px solid #E4E6E6',
     borderRadius: '5px',
     width: '40rem',
-    minHeight: '6.25rem',
+    minHeight: '5rem',
     // maxHeight: '20rem',
     display: 'flex',
     alignItems: 'center',
@@ -14,7 +14,7 @@ export const useStyles = makeStyles({
     margin: '0.25rem',
     height: 'max-content !important',
     '&:hover': {
-      border: '1.5px solid #a5a5a5',
+      border: '1.5px solid #A5A5A5',
     },
     '& .left-col': {
       alignSelf: 'stretch',
@@ -24,8 +24,7 @@ export const useStyles = makeStyles({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      backgroundColor: '#f8f9fa',
-
+      backgroundColor: '#F8F9FA',
       '& .upvote-button': {
         width: '1.7rem',
         height: '1.7rem',
@@ -62,11 +61,11 @@ export const useStyles = makeStyles({
         },
         '& .active': {
           color: '#647dce !important',
-          textStroke: '1.5px #647dce',
+          textStroke: '1.5px #647DCE',
         },
       },
     },
-    '& .main': {
+    '& .content': {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -151,7 +150,6 @@ export const useStyles = makeStyles({
         },
         '& .image-container': {
           width: '36rem',
-          // border: '1px solid grey',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -167,13 +165,14 @@ export const useStyles = makeStyles({
         marginTop: '0.5rem',
         marginBottom: '0.25rem',
         marginLeft: '0.5rem',
+        width: '100%',
         '& .comments': {
           display: 'flex',
           alignItems: 'center',
           padding: '0.2rem',
           borderRadius: '2px',
           '&:hover': {
-            backgroundColor: '#e8e8e8',
+            backgroundColor: '#E8E8E8',
           },
           '& .comment-icon': {
             color: '#8f9294',
@@ -193,7 +192,7 @@ export const useStyles = makeStyles({
           padding: '0.2rem',
           borderRadius: '2px',
           '&:hover': {
-            backgroundColor: '#e8e8e8',
+            backgroundColor: '#E8E8E8',
           },
           '& .fa-share': {
             color: '#8f9294',

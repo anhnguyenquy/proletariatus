@@ -1,4 +1,5 @@
 import { makeStyles } from '@mui/styles'
+
 export const useStyles = makeStyles({
   'nav-bar': {
     width: '100%',

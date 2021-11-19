@@ -2,7 +2,7 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import countryList from '../../../../../../core/helpers/country_state.json'
+import { countries } from '../../../../../../core/helpers'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
@@ -37,7 +37,7 @@ export const CountryFilter = (props: Props): JSX.Element => {
           <em>None</em>
         </MenuItem>
         {
-          countryList.map(countryObject => {
+          countries.map(countryObject => {
             return <MenuItem value={countryObject.countryCode}>{countryObject.name}</MenuItem>
           })
         }

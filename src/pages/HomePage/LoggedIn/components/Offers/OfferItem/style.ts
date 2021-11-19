@@ -2,22 +2,81 @@ import { makeStyles } from '@mui/styles'
 
 export const useStyles = makeStyles({
   'offer-item': {
-    border: '1.5px solid #E4E6E6',
-    borderRadius: '5px',
-    width: '100%',
-    height: '13rem',
+    borderBottom: '1.5px solid #E4E6E6',
+    width: '98%',
+    height: '6.5rem',
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
     position: 'relative',
     backgroundColor: 'white',
-    margin: '0.75rem',
-    '&:hover': {
-      border: '1.5px solid #a5a5a5',
-      // outline: '2px solid transparent'
-      // padding: '1px ',
+    marginBottom: '0.5rem',
+    transition: 'border 0.5s ease-out',
+    '& .ava-container': {
+      height: '100%',
+      width: '20%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      '& img': {
+        width: '5rem',
+        height: '5rem'
+      }
     },
-   
+    '& .main': {
+      height: '100%',
+      width: '80%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      '& .offer-title': {
+        color: '#13AA52',
+        width: '100%',
+        paddingLeft: '0.5rem',
+        marginTop: '0.25rem',
+        fontWeight: 600
+      },
+      '& .hovering': {
+        textDecoration: 'underline'
+      },
+      '& .being-clicked': {
+        textDecoration: 'underline',
+        color: '#116149'
+      },
+      '& .offer-info': {
+        color: '#8A8A8A',
+        width: '100%',
+        paddingLeft: '0.5rem',
+        marginTop: '0.1rem',
+        fontSize: '0.6rem'
+      },
+      '& .workplace': {
+        color: '#00000099',
+        width: '100%',
+        paddingLeft: '0.5rem',
+        fontSize: '0.75rem',
+        marginTop: '0.25rem'
+      },
+      '& .location': {
+        color: '#00000099',
+        width: '100%',
+        paddingLeft: '0.5rem',
+        fontSize: '0.75rem',
+        marginTop: '0.25rem'
+      },
+      '& .bottom-info': {
+        color: '#00000099',
+        width: '100%',
+        paddingLeft: '0.5rem',
+        fontSize: '0.65rem',
+        marginTop: 'auto',
+        '& span': {
+          color: '#13AA52',
+          fontWeight: 600
+        },
+        marginBottom: '0.25rem',
+      },
+    },
+
   },
 })

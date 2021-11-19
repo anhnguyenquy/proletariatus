@@ -2,7 +2,7 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import countryList from '../../../../../../core/helpers/country_state.json'
+import { countries } from '../../../../../../core/helpers'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
@@ -39,15 +39,14 @@ export const CityProvinceFilter = (props: Props): JSX.Element => {
               <em>Select Country first</em>
             </MenuItem>
             :
-            countryList.filter(countryObject => countryObject.countryCode == formValue.country)[0].stateProvinces != null ?
-              countryList.filter(countryObject => countryObject.countryCode == formValue.country)[0].stateProvinces.map(province => {
+            countries.filter(countryObject => countryObject.countryCode == formValue.country)[0].stateProvinces != null ?
+              countries.filter(countryObject => countryObject.countryCode == formValue.country)[0].stateProvinces.map(province => {
                 return <MenuItem value={province.name}>{province.name}</MenuItem>
               })
               :
               <MenuItem value=''>
                 <em>No Provinces Available</em>
               </MenuItem>
-
         }
       </Select>
     </FormControl>

@@ -1,24 +1,23 @@
-import { Line, theme, NavBar } from '../../core/components';
-import { ThemeProvider } from '@mui/material/styles';
-import { useDeviceBreakPoint } from '../../core/hooks';
-import { FaCog } from '@react-icons/all-files/fa/FaCog';
-import IconButton from '@mui/material/IconButton';
-import { DropDownMenu } from './components';
-import Button from '@mui/material/Button';
-import { BsPlus } from '@react-icons/all-files/bs/BsPlus';
-import { FaCircle } from '@react-icons/all-files/fa/FaCircle';
-import { FaCompass } from '@react-icons/all-files/fa/FaCompass';
-import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
-import { FaUserPlus } from '@react-icons/all-files/fa/FaUserPlus';
+import { Line, theme, NavBar } from '../../core/components'
+import { ThemeProvider } from '@mui/material/styles'
+import { useDeviceBreakPoint, useDocumentTitle } from '../../core/hooks'
+import { FaCog } from '@react-icons/all-files/fa/FaCog'
+import IconButton from '@mui/material/IconButton'
+import { DropDownMenu } from './components'
+import Button from '@mui/material/Button'
+import { BsPlus } from '@react-icons/all-files/bs/BsPlus'
+import { FaCircle } from '@react-icons/all-files/fa/FaCircle'
+import { FaCompass } from '@react-icons/all-files/fa/FaCompass'
+import { FaCheck } from '@react-icons/all-files/fa/FaCheck'
+import { FaUserPlus } from '@react-icons/all-files/fa/FaUserPlus'
 import fptLogo from '../../core/media/icons/page-logo.png'
-import { useDocumentTitle } from '../../core/hooks';
+import { useHistory } from 'react-router-dom'
 import {
   useStylesPC,
   //   useStylesTablet,
   //   useStylesPhone,
   //   useStylesExtraSmall,
-} from './styles';
-import { useEffect } from 'react';
+} from './styles'
 
 // interface Props {
 //   ava?: string;
@@ -28,9 +27,9 @@ import { useEffect } from 'react';
 // }
 
 interface Props {
-  ava: JSX.Element;
-  name: string;
-  hasNoti: boolean;
+  ava: JSX.Element
+  name: string
+  hasNoti: boolean
 }
 
 const PageItem = () => {
@@ -51,15 +50,12 @@ const PageItem = () => {
         <div className='title'>Notifications</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const BottomItem = (props: Props) => {
   // const { ava, numberOfNewNotifications, pageName, pageID } = props;
-  const { ava, name, hasNoti } = props;
-  useEffect(() => {
-    console.log(typeof fptLogo)
-  }, [])
+  const { ava, name, hasNoti } = props
   return (
     <a className='bottom-item' href='https://google.com'>
       <div className='ava-container'>
@@ -77,16 +73,17 @@ export const BottomItem = (props: Props) => {
         )}
       </div>
     </a>
-  );
-};
+  )
+}
 
 export const PageManager = (): JSX.Element => {
   const { isPhone, isTablet, isExtraSmall } = useDeviceBreakPoint()
-  const classesPC = useStylesPC();
+  const classesPC = useStylesPC()
   //   const classesTablet = useStylesTablet();
   //   const classesPhone = useStylesPhone();
   //   const classesExtraSmall = useStylesExtraSmall();
-  useDocumentTitle('Pages | Placeholder');
+  useDocumentTitle('Pages | Placeholder')
+  const history = useHistory()
   return (
     <ThemeProvider theme={theme}>
       <div className={classesPC['page-manager']}>
@@ -117,6 +114,7 @@ export const PageManager = (): JSX.Element => {
               color='lightBackground'
               size='small'
               startIcon={<BsPlus />}
+              onClick={() => { history.push('/new-page') }}
             >
               Create New Page
             </Button>
@@ -146,5 +144,5 @@ export const PageManager = (): JSX.Element => {
         </div>
       </div>
     </ThemeProvider>
-  );
-};
+  )
+}

@@ -50,7 +50,7 @@ const PostItem = (props: Props): JSX.Element => {
           <i className={`fas fa-arrow-down downvote-icon ${voteStatus == 'downvoted' ? 'active' : ''}`} />
         </IconButton>
       </div>
-      <div className='main'>
+      <div className='content'>
         <div className='post-details'>
           <div className='space-icon-container'>
             <img src={ComputerScience} className='space-icon' />
@@ -67,23 +67,28 @@ const PostItem = (props: Props): JSX.Element => {
           <div className='post-time'>{postTime}</div>
         </div>
         <div className='post-title'>{postTitle}</div>
-        <div className='post-content'>
-          {
-            postText != '' && postText != undefined ?
-              <div className='post-text'>{postText}</div>
-              :
-              <></>
-          }
-          {
-            currentImage != 0 ?
-              <div className='image-container'>
-                {/* <img src={images[currentImage]} /> */}
-                <img src={PostImage} />
-              </div>
-              :
-              <></>
-          }
-        </div>
+        {
+          (postText != '' && postText != undefined) || (currentImage != 0) ?
+            <div className='post-content'>
+              {
+                postText != '' && postText != undefined ?
+                  <div className='post-text'>{postText}</div>
+                  :
+                  <></>
+              }
+              {
+                currentImage != 0 ?
+                  <div className='image-container'>
+                    {/* <img src={images[currentImage]} /> */}
+                    <img src={PostImage} />
+                  </div>
+                  :
+                  <></>
+              }
+            </div>
+            :
+            <></>
+        }
         <div className='bottom-section'>
           <div className='comments'>
             <FaRegCommentAlt className='comment-icon' />

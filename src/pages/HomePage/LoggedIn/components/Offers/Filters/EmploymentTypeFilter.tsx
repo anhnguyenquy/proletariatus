@@ -2,6 +2,13 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
+import { makeStyles } from '@mui/styles'
+
+const useStyles = makeStyles({
+  menu: {
+    maxHeight: '20rem',
+  }
+})
 
 interface Props {
   formValue: any,
@@ -10,6 +17,7 @@ interface Props {
 
 export const EmploymentTypeFilter = (props: Props): JSX.Element => {
   const { formValue, changeFormValue } = props
+  const classes = useStyles()
   return (
     <FormControl size='small'>
       <InputLabel sx={{ marginLeft: '0.5rem', fontSize: '0.9rem !important', }}>Employment type</InputLabel>
@@ -21,6 +29,7 @@ export const EmploymentTypeFilter = (props: Props): JSX.Element => {
         onChange={(e: SelectChangeEvent) => {
           changeFormValue('employmentType', e.target.value)
         }}
+        MenuProps={{ className: classes.menu }}
       >
         <MenuItem value=''>
           <em>None</em>

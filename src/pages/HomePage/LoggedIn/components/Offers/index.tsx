@@ -1,10 +1,4 @@
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
-import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import { makeStyles } from '@mui/styles'
 import OfferItem from './OfferItem'
 import { useForm } from '../../../../../core/hooks'
 import { CountryFilter, CityProvinceFilter, SkillFilter, DepartmentFilter, EmploymentTypeFilter, PayRangeFilter, KeywordFilter } from './Filters'
@@ -32,7 +26,7 @@ export const Offers = (): JSX.Element => {
 					<DepartmentFilter formValue={formValue} changeFormValue={changeFormValue} />
 					<EmploymentTypeFilter formValue={formValue} changeFormValue={changeFormValue} />
 					<PayRangeFilter formValue={formValue} changeFormValue={changeFormValue} />
-					<KeywordFilter formValue={formValue} changeFormValue={changeFormValue}/>
+					<KeywordFilter formValue={formValue} changeFormValue={changeFormValue} />
 					<Button
 						className='filter search-button'
 						variant='outlined'
@@ -45,7 +39,9 @@ export const Offers = (): JSX.Element => {
 			</div>
 			<div className='content'>
 				<div className='title'>Recommended for you</div>
-				<OfferItem />
+				<OfferItem offerTitle='Frontend Developer' postedBy='p/Garena' space='s/ComputerScience' workplace='Garena' location='Hanoi, Vietnam' applicantsNo={7} />
+				<OfferItem offerTitle='Frontend Developer' postedBy='p/Garena' space='s/ComputerScience' workplace='Garena' location='Hanoi, Vietnam' applicantsNo={7} />
+				<OfferItem offerTitle='Frontend Developer' postedBy='p/Garena' space='s/ComputerScience' workplace='Garena' location='Hanoi, Vietnam' applicantsNo={7} />
 			</div>
 		</div>
 	)

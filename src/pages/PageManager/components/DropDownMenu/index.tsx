@@ -5,15 +5,10 @@ import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { BiFlag } from '@react-icons/all-files/bi/BiFlag'
 import { FaCircle } from '@react-icons/all-files/fa/FaCircle'
-import { ThemeProvider } from '@mui/material/styles'
 import fptLogo from '../../../../core/media/icons/page-logo.png'
 import { useStyles } from './style'
 
-declare module '@mui/material/Button' {
-  interface ButtonPropsColorOverrides {
-    lightBackground: true
-  }
-}
+
 
 interface Props {
   ava?: string

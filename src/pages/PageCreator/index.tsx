@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
-import { ThemeProvider } from '@mui/material/styles'
 import { PageIdentityField, LocationField, ContactsField, ProfileDetailsField } from './components'
-import { theme, NavBar } from '../../core/components'
+import { NavBar } from '../../core/components'
 import { useDeviceBreakPoint, useDocumentTitle, useForm } from '../../core/hooks'
 import { ReactComponent as BuildingIcon } from '../../core/media/icons/Building.svg'
 import { ReactComponent as ArrowBack } from '../../core/media/icons/ArrowBack.svg'
+import { pageCreationFormDefaultValue } from './components/components'
+import { PageIdentity, Location, Contact, ProfileDetails, PageCreationFormDefaultValue } from './components/interfaces'
 import {
   useStylesPC,
   //   useStylesTablet,
@@ -23,12 +24,10 @@ export const PageCreator = (): JSX.Element => {
   //   const classesExtraSmall = useStylesExtraSmall();
   useDocumentTitle('Create a Page | Placeholder')
   const history = useHistory()
-  const { formValue, changeFormValue, resetFormValue } = useForm({})
-
+  const { formValue, changeFormValue, resetFormValue } = useForm<PageCreationFormDefaultValue>(pageCreationFormDefaultValue)
   return (
-    <ThemeProvider theme={theme}>
-      <div className={classesPC['page-creator']}>
-        {/* <div
+    <div className={classesPC['page-creator']}>
+      {/* <div
         className={
           !(isTablet || isPhone || isExtraSmall)
             ? classesPC['page-manager']
@@ -39,48 +38,45 @@ export const PageCreator = (): JSX.Element => {
             : classesPhone['page-manager']
         }
       > */}
-        <NavBar loggedIn={true} current='pages' />
-        <div className='top-section'>
-          <div className='button-container'>
-            <Button
-              variant='text'
-              startIcon={<ArrowBack className='arrow-back' />}
-              className='back-button'
-              onClick={() => {
-                history.push('/pages')
-              }}
-            >
-              Back
-            </Button>
-          </div>
-          <div className='decoration'>
-            <BuildingIcon className='building-icon' />
-            <div className='text'>
-              Let's get started with a few details about your page.
-            </div>
-          </div>
-        </div>
-        <PageIdentityField />
-        <LocationField />
-        <ContactsField />
-        <ProfileDetailsField />
-        <div className='acknowledgement'>
-          <Checkbox className='check-box' size='small' />
-          <div className='text'>
-            I verify that I am an authorized representative of this organization and have the right to act on its behalf in the creation and management of this page. The organization and I agree to the additional <span>terms</span> for Pages.
-          </div>
-        </div>
-        <div className='create-page-button-container'>
+      <NavBar loggedIn={true} current='pages' />
+      <div className='top-section'>
+        <div className='button-container'>
           <Button
-            variant='outlined'
-            className='create-page-button'
-            onClick={() => { }}
-            size='small'
+            variant='text'
+            startIcon={<ArrowBack className='arrow-back' />}
+            className='back-button'
+            href='/pages'
           >
-            Create page
+            Back
           </Button>
         </div>
+        <div className='decoration'>
+          <BuildingIcon className='building-icon' />
+          <div className='text'>
+            Let's get started with a few details about your page.
+          </div>
+        </div>
       </div>
-    </ThemeProvider>
+      <PageIdentityField onChange={(newValue: PageIdentity) => { changeFormValue('page-identity', newValue) }} />
+      <LocationField onChange={(newValue: Location) => { changeFormValue('location', newValue) }} />
+      <ContactsField onChange={(newValue: Contact[] | null) => { changeFormValue('contact', newValue) }} />
+      <ProfileDetailsField onChange={(newValue: ProfileDetails) => { changeFormValue('profile-details', newValue) }} />
+      <div className='acknowledgement'>
+        <Checkbox className='check-box' size='small' />
+        <div className='text'>
+          I verify that I am an authorized representative of this organization and have the right to act on its behalf in the creation and management of this page. The organization and I agree to the additional <span>terms</span> for Pages.
+        </div>
+      </div>
+      <div className='create-page-button-container'>
+        <Button
+          variant='outlined'
+          className='create-page-button'
+          onClick={() => { }}
+          size='small'
+        >
+          Create page
+        </Button>
+      </div>
+    </div>
   )
 }

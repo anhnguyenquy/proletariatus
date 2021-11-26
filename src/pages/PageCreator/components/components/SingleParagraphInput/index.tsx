@@ -1,6 +1,7 @@
 import FormHelperText from '@mui/material/FormHelperText'
 import TextareaAutosize from '@mui/material/TextareaAutosize'
-import { ClassNameMap } from '@mui/styles/withStyles'
+import { makeStyles } from '@mui/styles'
+import { useClasses } from '../../../../../core/hooks'
 import { useStyles } from './style'
 
 interface Props {
@@ -8,10 +9,10 @@ interface Props {
   placeholder?: string
   description?: string
   onChange: (newValue: string) => void
-  customClasses?: ClassNameMap
   maxLength?: number
   minRows?: number
   maxRows?: number
+  customStyles?: object
 }
 
 export const SingleParagraphInput = (props: Props): JSX.Element => {
@@ -20,20 +21,15 @@ export const SingleParagraphInput = (props: Props): JSX.Element => {
     placeholder,
     description,
     onChange,
-    customClasses,
     maxLength,
     minRows,
     maxRows,
+    customStyles
   } = props
   const classes = useStyles()
+  const customClasses = useClasses(customStyles)
   return (
-    <div
-      className={
-        customClasses != undefined && customClasses != {}
-          ? customClasses['single-paragraph-input']
-          : classes['single-paragraph-input']
-      }
-    >
+    <div className={customStyles ? customClasses['single-paragraph-input'] : classes['single-paragraph-input']}>
       {label && <div className='label'>{label}</div>}
       <div
         className='input-container'

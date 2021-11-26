@@ -71,6 +71,7 @@ export const useStyles = makeStyles({
       alignItems: 'flex-start',
       alignSelf: 'stretch',
       height: '100%',
+      backgroundColor: 'white',
       '& .post-details': {
         display: 'flex',
         alignItems: 'center',

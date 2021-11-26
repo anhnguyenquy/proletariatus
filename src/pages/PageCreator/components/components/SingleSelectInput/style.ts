@@ -10,17 +10,11 @@ export const singleSelectInputStyle = {
     },
     '& .select-container': {
       width: '100%',
-      // height: '1.8rem',
       display: 'flex',
       alignItems: 'center',
-      // marginTop: '0.75rem',
       '& .value-prefix': {
         fontSize: '0.8rem',
         marginRight: '0.25rem'
-      },
-      '& #select': {
-        // width: '13rem',
-        // fontSize: '0.8rem',
       }
     },
     '& .description': {
@@ -29,7 +23,7 @@ export const singleSelectInputStyle = {
     }
   },
   menu: {
-    maxHeight: '20rem',
+    maxHeight: '13rem',
     width: '15rem',
   }
 }

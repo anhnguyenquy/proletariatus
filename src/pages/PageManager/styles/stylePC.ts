@@ -8,7 +8,6 @@ export const useStylesPC = makeStyles({
     backgroundColor: '#F3F2EF',
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: "flex-start",
     '& .page-content': {
       width: '100%',
       height: '100%',

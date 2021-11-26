@@ -1,8 +1,10 @@
 import PostItem from './PostItem'
+import { useStyles } from './style'
 
 export const Posts = (): JSX.Element => {
+  const classes = useStyles()
   return (
-    <div className='posts'>
+    <div className={classes['posts']}>
       <div className='create-post-bar'>
         <div className='ava-container'>
           <i className='fas fa-user-circle' />

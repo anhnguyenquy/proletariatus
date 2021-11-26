@@ -1,6 +1,6 @@
 import FormHelperText from '@mui/material/FormHelperText'
 import { useStyles } from './style'
-import { ClassNameMap } from '@mui/styles/withStyles'
+import { useClasses } from '../../../../../core/hooks'
 
 interface Props {
   label?: string
@@ -8,18 +8,21 @@ interface Props {
   placeholder?: string
   description?: string
   onChange: (newValue: string) => void
-  customClasses?: ClassNameMap
+  customStyles?: object
 }
 
 export const SingleTextInput = (props: Props): JSX.Element => {
-  const { label, valuePrefix, placeholder, description, onChange, customClasses } = props
+  const { label, valuePrefix, placeholder, description, onChange, customStyles } = props
   const classes = useStyles()
+  const customClasses = useClasses(customStyles)
+  console.log(classes)
+  console.log(customClasses)
   return (
-    <div className={customClasses != undefined && customClasses != {} ? customClasses['single-text-input'] : classes['single-text-input']}>
+    <div className={customStyles ? customClasses['single-text-input'] : classes['single-text-input']}>
       {
         label && <div className='label'>{label}</div>
       }
-      <div className='input-container' style={label != undefined && label != null && label != '' ? { marginTop: '0.5rem' } : {}}>
+      <div className='input-container'>
         {
           valuePrefix && <span className='value-prefix'>{valuePrefix}</span>
         }

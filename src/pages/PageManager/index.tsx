@@ -1,5 +1,4 @@
-import { Line, theme, NavBar } from '../../core/components'
-import { ThemeProvider } from '@mui/material/styles'
+import { Line, NavBar } from '../../core/components'
 import { useDeviceBreakPoint, useDocumentTitle } from '../../core/hooks'
 import { FaCog } from '@react-icons/all-files/fa/FaCog'
 import IconButton from '@mui/material/IconButton'
@@ -85,9 +84,8 @@ export const PageManager = (): JSX.Element => {
   useDocumentTitle('Pages | Placeholder')
   const history = useHistory()
   return (
-    <ThemeProvider theme={theme}>
-      <div className={classesPC['page-manager']}>
-        {/* <div
+    <div className={classesPC['page-manager']}>
+      {/* <div
         className={
           !(isTablet || isPhone || isExtraSmall)
             ? classesPC['page-manager']
@@ -98,51 +96,50 @@ export const PageManager = (): JSX.Element => {
             : classesPhone['page-manager']
         }
       > */}
-        <NavBar loggedIn={true} current='pages' />
-        <div className='page-content'>
-          <div className='left-bar'>
-            <div className='top'>
-              <div className='bar-title'>Pages</div>
-              <IconButton className='icon-button'>
-                <FaCog className='fa-cog' />
-              </IconButton>
-            </div>
-            <DropDownMenu />
-            <Button
-              className='create-new-page-button'
-              variant='contained'
-              color='lightBackground'
-              size='small'
-              startIcon={<BsPlus />}
-              onClick={() => { history.push('/new-page') }}
-            >
-              Create New Page
-            </Button>
-            <Line width='16rem' />
-            <div className='bottom-items'>
-              <BottomItem name='Discover' hasNoti={false} ava={<FaCompass />} />
-              <BottomItem
-                name='Followed Pages'
-                hasNoti={false}
-                ava={<FaCheck />}
-              />
-              <BottomItem
-                name='Invitations'
-                hasNoti={true}
-                ava={<FaUserPlus />}
-              />
-            </div>
+      <NavBar loggedIn={true} current='pages' />
+      <div className='page-content'>
+        <div className='left-bar'>
+          <div className='top'>
+            <div className='bar-title'>Pages</div>
+            <IconButton className='icon-button'>
+              <FaCog className='fa-cog' />
+            </IconButton>
           </div>
-          <div className='main'>
-            <div className='main-title'>Pages you manage</div>
-            <div className='page-items'>
-              <PageItem />
-              <PageItem />
-              <PageItem />
-            </div>
+          <DropDownMenu />
+          <Button
+            className='create-new-page-button'
+            variant='contained'
+            color='lightBackgroundPrimary'
+            size='small'
+            startIcon={<BsPlus />}
+            href='/new-page'
+          >
+            Create New Page
+          </Button>
+          <Line width='16rem' />
+          <div className='bottom-items'>
+            <BottomItem name='Discover' hasNoti={false} ava={<FaCompass />} />
+            <BottomItem
+              name='Followed Pages'
+              hasNoti={false}
+              ava={<FaCheck />}
+            />
+            <BottomItem
+              name='Invitations'
+              hasNoti={true}
+              ava={<FaUserPlus />}
+            />
+          </div>
+        </div>
+        <div className='main'>
+          <div className='main-title'>Pages you manage</div>
+          <div className='page-items'>
+            <PageItem />
+            <PageItem />
+            <PageItem />
           </div>
         </div>
       </div>
-    </ThemeProvider>
+    </div>
   )
 }

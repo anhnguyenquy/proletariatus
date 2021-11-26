@@ -49,7 +49,7 @@ export const NestedArrayInput = <T,>(props: ArrayProps<T>): JSX.Element => {
       }
       {currentValues.map((value, index) => (
         <NestedArrayItem<T>
-          value={value}
+          values={value}
           config={itemConfigs[index]}
           label={`${itemLabel} ${index + 1}`}
           onItemChange={(fieldName, newValue) => {

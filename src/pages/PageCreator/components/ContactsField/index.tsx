@@ -3,15 +3,23 @@ import { Field, NestedArrayInput } from '../components'
 import { Contact } from '../interfaces'
 import { defaultItemConfigs, defaultItem } from './components'
 
-export const ContactsField = (): JSX.Element => {
-  const [values, setValues] = useState<Contact[] | null>([defaultItem, defaultItem])
+interface Props {
+  onChange: (newValue: Contact[] | null) => void
+}
+
+export const ContactsField = (props: Props): JSX.Element => {
+  const { onChange } = props
+  const [contacts, setContacts] = useState<Contact[] | null>([defaultItem, defaultItem])
   const initialActiveItemConfigsArray = []
-  values.forEach((value) => {
+  contacts.forEach((value) => {
     initialActiveItemConfigsArray.push(defaultItemConfigs)
   })
   const [activeItemConfigsArray, setActiveItemConfigsArray] = useState<
     Contact[] | null
   >(initialActiveItemConfigsArray)
+  useEffect(() => {
+    onChange(contacts)
+  }, [contacts])
   return (
     <Field title='Contacts'>
       <NestedArrayInput<Contact>
@@ -21,9 +29,9 @@ export const ContactsField = (): JSX.Element => {
         itemLabel='Address'
         defaultItem={defaultItem}
         onChange={(newValue: Contact[]) => {
-          setValues(newValue)
+          setContacts(newValue)
         }}
-        values={values}
+        values={contacts}
         max={3}
         description="If your page's physical location is located in several addresses, add them here."
       />

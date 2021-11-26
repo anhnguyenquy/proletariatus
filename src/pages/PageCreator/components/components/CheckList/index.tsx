@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -11,14 +10,18 @@ import { useStyles } from './style'
 interface Props {
   title: string
   options: SelectOption[]
+  onChange: (newValue: string) => void
 }
 
 export const CheckList = (props: Props): JSX.Element => {
-  const { title, options } = props
+  const { title, options, onChange } = props
   const [value, setValue] = useState<string>()
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value)
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value)
   }
+  useEffect(() => {
+    onChange(value)
+  }, [value])
   const classes = useStyles()
   return (
     <div className={classes['check-list']}>
@@ -30,9 +33,6 @@ export const CheckList = (props: Props): JSX.Element => {
             value={option.value}
             label={option.display}
             control={<Radio />}
-            sx={{
-              
-            }}
           />
         ))}
       </RadioGroup>

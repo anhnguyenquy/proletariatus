@@ -3,4 +3,8 @@ export * from './SelectOption'
 export * from './LocationItemConfig'
 export * from './Contact'
 export * from './ContactItemConfig'
+export * from './PageCreationFormDefaultValue'
+export * from './PageIdentity'
+export * from './ProfileDetails'
+export * from './Location'
 

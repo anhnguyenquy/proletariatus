@@ -34,10 +34,7 @@ export const useStyles = makeStyles({
       justifyContent: 'space-between',
       // border: '1px solid red'
     }
-  }
-})
-
-export const useMenuStyles = makeStyles({
+  },
   menu: {
     maxHeight: '20rem',
     width: '15rem',

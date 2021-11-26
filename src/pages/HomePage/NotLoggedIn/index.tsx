@@ -10,15 +10,13 @@ import Education from '../../../core/media/icons/spaces/education.png'
 import HealthProfessions from '../../../core/media/icons/spaces/health-professions.png'
 import ComputerScience from '../../../core/media/icons/spaces/computer-science.png'
 import { Button } from '@mui/material'
-import { ThemeProvider } from '@mui/material/styles'
-import { theme } from '../../../core/components/'
 import { Offers, Posts } from './components'
 import {
   useStylesPC,
   //   useStylesTablet,
   //   useStylesPhone,
   //   useStylesExtraSmall,
-} from './styles';
+} from './styles'
 
 
 const NotLoggedIn = (): JSX.Element => {
@@ -59,22 +57,20 @@ const NotLoggedIn = (): JSX.Element => {
         </div>
         <div className='main'>
           <div className='button-container'>
-            <ThemeProvider theme={theme}>
-              <Button
-                className={`offers-button ${active == 'offers' ? 'active' : ''}`}
-                variant={`${active == 'offers' ? 'contained' : 'text'}`}
-                onClick={() => { setActive('offers') }}
-              >
-                <div className='button-text'>Offers</div>
-              </Button>
-              <Button
-                className={`posts-button ${active == 'posts' ? 'active' : ''}`}
-                variant={`${active == 'posts' ? 'contained' : 'text'}`}
-                onClick={() => { setActive('posts') }}
-              >
-                <div className='button-text'>Posts</div>
-              </Button>
-            </ThemeProvider>
+            <Button
+              className={`offers-button ${active == 'offers' ? 'active' : ''}`}
+              variant={`${active == 'offers' ? 'contained' : 'text'}`}
+              onClick={() => { setActive('offers') }}
+            >
+              <div className='button-text'>Offers</div>
+            </Button>
+            <Button
+              className={`posts-button ${active == 'posts' ? 'active' : ''}`}
+              variant={`${active == 'posts' ? 'contained' : 'text'}`}
+              onClick={() => { setActive('posts') }}
+            >
+              <div className='button-text'>Posts</div>
+            </Button>
           </div>
           {
             active == 'offers' ?

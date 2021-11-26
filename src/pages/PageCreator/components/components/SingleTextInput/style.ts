@@ -7,13 +7,13 @@ export const singleTextInputStyle = {
       color: '#8A8A8A',
       fontWeight: 500,
       fontSize: '0.8rem',
+      marginBottom: '0.5rem',
     },
     '& .input-container': {
       width: '100%',
       height: '2.213rem',
       display: 'flex',
       alignItems: 'center',
-      // marginTop: '0.5rem',
       '& .value-prefix': {
         fontSize: '0.8rem',
         marginRight: '0.25rem'
@@ -26,7 +26,7 @@ export const singleTextInputStyle = {
         boxSizing: 'border-box',
         outline: 'none',
         height: '100%',
-        // minHeight: '2.213rem',
+        minHeight: '2.213rem !important',
         fontSize: '0.8rem',
         padding: '0 0.5rem',
         letterSpacing: '0.025rem'

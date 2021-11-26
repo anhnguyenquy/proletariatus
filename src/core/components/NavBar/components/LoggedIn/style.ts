@@ -230,7 +230,14 @@ export const useStyles = makeStyles({
           fontSize: '1.3rem',
           textStroke: '1px #6B6C6E',
         },
+        '& .fa-active': {
+          color: '#13AA52 !important',
+          textStroke: '1px transparent',
+        }
       },
-    },
-  },
+      '& .icon-container-active': {
+        borderBottom: '2px solid #13AA52'
+      }
+    }
+  }
 })

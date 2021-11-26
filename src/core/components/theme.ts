@@ -1,10 +1,12 @@
-import { createTheme } from "@mui/material/styles";
-declare module "@mui/material/styles" {
+import { createTheme } from '@mui/material/styles'
+declare module '@mui/material/styles' {
   interface Palette {
-    lightBackground: Palette["primary"];
+    lightBackgroundPrimary: Palette['primary']
+    red: Palette['primary']
   }
   interface PaletteOptions {
-    lightBackground: PaletteOptions["primary"];
+    lightBackgroundPrimary: PaletteOptions['primary']
+    red: PaletteOptions['primary']
   }
 
   // interface PaletteColor {
@@ -18,13 +20,16 @@ declare module "@mui/material/styles" {
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#13AA52",
+      main: '#13AA52',
     },
     secondary: {
-      main: "#16C172",
+      main: '#16C172',
     },
-    lightBackground: {
-      main: "#C7FFE5"
-    }
+    lightBackgroundPrimary: {
+      main: '#C7FFE5',
+    },
+    red: {
+      main: '#F85149',
+    },
   },
-});
+})

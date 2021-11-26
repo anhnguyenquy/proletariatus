@@ -10,7 +10,6 @@ export const useStylesPC = makeStyles({
       height: '100%',
       width: '100%',
       display: 'flex',
-      flexDirection: 'flex-start',
       backgroundColor: '#F3F2EF',
       '& .left-section': {
         height: '100vh',

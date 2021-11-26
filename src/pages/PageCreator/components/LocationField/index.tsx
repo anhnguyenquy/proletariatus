@@ -1,33 +1,58 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Field, NestedArrayInput, NestedArrayItem } from '../components'
-import { Address, LocationItemConfig } from '../interfaces'
+import { Address, LocationItemConfig, Location } from '../interfaces'
 import { countries } from '../../../../core/helpers'
-import { countryOptions, defaultItem, defaultItemConfigs } from './components'
+import { defaultItem, defaultItemConfigs } from './components'
 import _ from 'lodash'
-import { usePrevious } from '../../../../core/hooks'
+import { usePrevious, useForm } from '../../../../core/hooks'
 
-export const LocationField = (): JSX.Element => {
-  const [singleValue, setSingleValue] = useState<Address | null>(defaultItem)
-  const [values, setValues] = useState<Address[] | null>([defaultItem, defaultItem])
-  const prevValues = usePrevious(values)
-  const initialActiveItemConfigsArray = []
-  values.forEach((value) => {
-    initialActiveItemConfigsArray.push(defaultItemConfigs)
+interface Props {
+  onChange: (newValue: Location) => void
+}
+
+export const LocationField = (props: Props): JSX.Element => {
+  const { onChange } = props
+  const [headquarter, setHeadquarter] = useState<Address | null>(defaultItem)
+  const [addresses, setAddresses] = useState<Address[] | null>([defaultItem, defaultItem])
+  const { formValue, changeFormValue, resetFormValue } = useForm<Location>({
+    headquarter: {
+      country: '',
+      'city/province': '',
+      street: '',
+    },
+    addresses: [
+      {
+        country: '',
+        'city/province': '',
+        street: '',
+      },
+      {
+        country: '',
+        'city/province': '',
+        street: '',
+      }
+    ]
   })
-  const [activeItemConfigsArray, setActiveItemConfigsArray] = useState<
-    LocationItemConfig[] | null
-  >(initialActiveItemConfigsArray)
   useEffect(() => {
-    console.log('abcd')
-    const changedItem = _.differenceWith(values, prevValues, _.isEqual)[0]
-    const changedItemIndex = values.findIndex(v => {
-      return _.isEqual(v, changedItem)
+    onChange(formValue)
+  }, [formValue])
+  useEffect(() => {
+    changeFormValue('headquarter', headquarter)
+  }, [headquarter])
+  useEffect(() => {
+    changeFormValue('addresses', addresses)
+  }, [addresses])
+  const prevAddresses = usePrevious(addresses)
+  const initialActiveItemConfigsArray = addresses.map(address => {
+    return defaultItemConfigs
+  })
+  const [activeItemConfigsArray, setActiveItemConfigsArray] = useState<LocationItemConfig[][] | null>(initialActiveItemConfigsArray)
+  useEffect(() => {
+    const changedItem = _.differenceWith(addresses, prevAddresses, _.isEqual)[0]
+    const changedItemIndex = addresses.findIndex(address => {
+      return _.isEqual(address, changedItem)
     })
-    console.log(changedItemIndex)
-    console.log('values: '+values)
-    console.log('prevValues: '+prevValues)
-    if (changedItem && changedItem.country != '')  {
-      console.log(changedItem)
+    if (changedItem && changedItem.country != '') {
       const provinces = countries.filter(countryObject => countryObject.countryCode == changedItem.country)[0].stateProvinces
       if (provinces != null) {
         const cityOrProvinceOptions = provinces.map(province => {
@@ -36,22 +61,21 @@ export const LocationField = (): JSX.Element => {
             value: province.name,
           }
         })
-        console.log(activeItemConfigsArray)
         let currentActiveItemConfigsArray = [...activeItemConfigsArray]
         currentActiveItemConfigsArray[changedItemIndex][1].options = cityOrProvinceOptions
-        console.log(currentActiveItemConfigsArray)
         setActiveItemConfigsArray(currentActiveItemConfigsArray)
       }
     }
-  }, [values])
+  }, [addresses])
+
   return (
     <Field title='Location'>
       <NestedArrayItem<Address>
-        value={singleValue}
+        values={headquarter}
         config={defaultItemConfigs}
         label='Headquarter'
-        onItemChange={(fieldName, newValue) => {
-          // updateValues(index, fieldName, newValue)
+        onChange={(newValue: Address | null) => {
+          setHeadquarter(newValue)
         }}
         inArrayInput={false}
       />
@@ -63,9 +87,9 @@ export const LocationField = (): JSX.Element => {
         itemLabel='Address'
         defaultItem={defaultItem}
         onChange={(newValue: Address[]) => {
-          setValues(newValue)
+          setAddresses(newValue)
         }}
-        values={values}
+        values={addresses}
         max={3}
         description="If your page's physical location is located in several addresses, add them here."
       />

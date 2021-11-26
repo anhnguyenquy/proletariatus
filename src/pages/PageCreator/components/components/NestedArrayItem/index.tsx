@@ -1,16 +1,17 @@
+import { useState, useEffect } from 'react'
 import { FaTrash } from '@react-icons/all-files/fa/FaTrash'
 import { SingleTextInput, SingleSelectInput } from '..'
 import { SelectOption } from '../../interfaces'
-import { useStyles, useMenuStyles } from './style'
+import { useStyles } from './style'
 import { singleTextInputStyle } from '../SingleTextInput/style'
-import { singleSelectInputStyle } from '../SingleSelectInput/style'
-import { makeStyles } from '@mui/styles'
+import { defaultSelectStyles } from '../SingleSelectInput'
 import IconButton from '@mui/material/IconButton'
+import { ClassNameMap } from '@mui/styles/withStyles'
+import { useClasses } from '../../../../../core/hooks'
+import _ from 'lodash'
 
-singleTextInputStyle['single-text-input'].margin = '0.5rem 0rem 0.75rem 0rem'
-const useCustomTextInputStyles = makeStyles(singleTextInputStyle)
-singleSelectInputStyle['single-select-input'].margin = '0'
-const useCustomSelectInputStyles = makeStyles(singleSelectInputStyle)
+let newSelectStyles = _.cloneDeep(defaultSelectStyles)
+newSelectStyles.margin = '0 !important'
 
 interface ItemConfig {
   label?: string
@@ -20,51 +21,74 @@ interface ItemConfig {
 }
 
 interface ItemProps<T> {
-  value: T
+  values: T
   config: ItemConfig[]
-  label: string
-  onItemChange: (fieldName: string, newValue: T) => void
+  label?: string
+  onChange?: (newValue: T | null) => void
+  onItemChange?: (fieldName: string, newValue: T) => void
   onDelete?: () => void
   inArrayInput: boolean
+  customStyles?: object
 }
 
 export const NestedArrayItem = <T,>(props: ItemProps<T>): JSX.Element => {
-  const { value, config, label, onItemChange, onDelete, inArrayInput } = props
+  const { values, config, label, onChange, onItemChange, onDelete, inArrayInput, customStyles } = props
+  const [itemValues, setItemValues] = useState<T>(values)
+  const updateItemValues = (fieldName: string, newValue: string | number) => {
+    let currentItemValues = { ...itemValues }
+    currentItemValues[`${fieldName}`] = newValue
+    setItemValues(currentItemValues)
+  }
+  useEffect(() => {
+    // onChangez(itemValues)
+    console.log("hello")
+  }, [itemValues])
+  const customClasses = useClasses(customStyles)
   const classes = useStyles()
-  const menuClasses = useMenuStyles()
-  const customTextInputClasses = useCustomTextInputStyles()
-  const customSelectInputClasses = useCustomSelectInputStyles()
   return (
-    <div className={classes['nested-array-item']}>
-      <div className='item-label'>
-        <span className={`label-text ${!inArrayInput && 'big-label'}`}>{label}</span>
-        {
-          inArrayInput &&
-          <IconButton className='icon-button' onClick={() => { onDelete() }} size='small'>
-            <FaTrash className='fa-trash' />
-          </IconButton>
-        }
-      </div>
+    <div className={customStyles ? customClasses['nested-array-item'] : classes['nested-array-item']}>
+      {
+        label &&
+        <div className='item-label'>
+          <span className={`label-text ${!inArrayInput && 'big-label'}`}>{label}</span>
+          {
+            inArrayInput &&
+            <IconButton className='icon-button' onClick={() => { onDelete() }} size='small'>
+              <FaTrash className='fa-trash' />
+            </IconButton>
+          }
+        </div>
+      }
       <div className='items'>
-        {config.map((subItemConfig) => (
+        {config.map(subItemConfig => (
           <>
             {subItemConfig.type == 'text' && (
               <SingleTextInput
                 placeholder={subItemConfig.label}
-                onChange={(newValue) => {
-                  onItemChange(subItemConfig.fieldName, newValue as any)
+                onChange={newValue => {
+                  if (inArrayInput) {
+                    onItemChange(subItemConfig.fieldName, newValue as any)
+                  }
+                  else {
+                    updateItemValues(subItemConfig.fieldName, newValue)
+                  }
                 }}
-                customClasses={customTextInputClasses}
               />
             )}
             {subItemConfig.type == 'select' && (
               <SingleSelectInput
-                value={value[subItemConfig.fieldName]}
+                value={values[subItemConfig.fieldName]}
                 options={subItemConfig.options}
                 placeholder={subItemConfig.label}
-                onChange={(newValue) => {
-                  onItemChange(subItemConfig.fieldName, newValue as any)
+                onChange={newValue => {
+                  if (inArrayInput) {
+                    onItemChange(subItemConfig.fieldName, newValue as any)
+                  }
+                  else {
+                    updateItemValues(subItemConfig.fieldName, newValue)
+                  }
                 }}
+                selectStyles={newSelectStyles}
               />
             )}
           </>

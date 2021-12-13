@@ -36,8 +36,6 @@ export const SingleSelectInput = (props: Props): JSX.Element => {
   const { label, value, options, valuePrefix, placeholder, description, none = true, onChange, MenuProps, customStyles, selectStyles, menuItemStyles } = props
   const classes = useStyles()
   const customClasses = useClasses(customStyles)
-  console.log(customStyles)
-  console.log(selectStyles)
   return (
     <div className={customStyles ? customClasses['single-select-input'] : classes['single-select-input']}>
       {

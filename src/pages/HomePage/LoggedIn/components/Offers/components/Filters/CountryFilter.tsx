@@ -2,7 +2,7 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import { countries } from '../../../../../../../core/helpers'
+import { countries } from '../../../../../../../core/constants'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({

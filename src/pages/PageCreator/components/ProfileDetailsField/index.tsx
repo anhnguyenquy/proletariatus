@@ -22,6 +22,7 @@ export const ProfileDetailsField = (props: Props): JSX.Element => {
   useEffect(() => {
     onChange(formValue)
   }, [formValue])
+
   return (
     <Field title='Profile details'>
       <CheckList
@@ -42,6 +43,7 @@ export const ProfileDetailsField = (props: Props): JSX.Element => {
         description='300 x 300px recommended. JPGs, JPEGs, and PNGs supported.'
         multiple={false}
         accept='.jpg, .jpeg, .png'
+        fileInputID='logo-input'
         onChange={(newValue: File) => { changeFormValue('logo', newValue) }}
       />
       <FileUploadPrompt
@@ -49,6 +51,7 @@ export const ProfileDetailsField = (props: Props): JSX.Element => {
         description='820 x 360px recommended. JPGs, JPEGs, and PNGs supported.'
         multiple={false}
         accept='.jpg, .jpeg, .png'
+        fileInputID='cover-input'
         onChange={(newValue: File) => { changeFormValue('cover', newValue) }}
       />
       <SingleParagraphInput

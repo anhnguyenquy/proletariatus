@@ -1,4 +1,4 @@
-import { countries } from '../../../../../core/helpers'
+import { countries } from '../../../../../core/constants'
 
 const options = []
 countries.forEach((countryObject) => {

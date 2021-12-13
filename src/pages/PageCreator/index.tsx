@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { useHistory } from 'react-router-dom'
 import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
@@ -25,6 +25,8 @@ export const PageCreator = (): JSX.Element => {
   useDocumentTitle('Create a Page | Placeholder')
   const history = useHistory()
   const { formValue, changeFormValue, resetFormValue } = useForm<PageCreationFormDefaultValue>(pageCreationFormDefaultValue)
+  const [verified, setVerified] = useState(false)
+
   return (
     <div className={classesPC['page-creator']}>
       {/* <div
@@ -59,10 +61,12 @@ export const PageCreator = (): JSX.Element => {
       </div>
       <PageIdentityField onChange={(newValue: PageIdentity) => { changeFormValue('page-identity', newValue) }} />
       <LocationField onChange={(newValue: Location) => { changeFormValue('location', newValue) }} />
-      <ContactsField onChange={(newValue: Contact[] | null) => { changeFormValue('contact', newValue) }} />
+      <ContactsField onChange={(newValue: Contact[] | null) => { changeFormValue('contacts', newValue) }} />
       <ProfileDetailsField onChange={(newValue: ProfileDetails) => { changeFormValue('profile-details', newValue) }} />
       <div className='acknowledgement'>
-        <Checkbox className='check-box' size='small' />
+        <Checkbox className='check-box' size='small' onChange={(e: ChangeEvent<HTMLInputElement>) => {
+          setVerified(e.target.checked)
+        }} />
         <div className='text'>
           I verify that I am an authorized representative of this organization and have the right to act on its behalf in the creation and management of this page. The organization and I agree to the additional <span>terms</span> for Pages.
         </div>
@@ -73,6 +77,8 @@ export const PageCreator = (): JSX.Element => {
           className='create-page-button'
           onClick={() => { }}
           size='small'
+          disabled={!verified}
+          sx={!verified && { border: '2px solid #c1bcc4 !important' }}
         >
           Create page
         </Button>

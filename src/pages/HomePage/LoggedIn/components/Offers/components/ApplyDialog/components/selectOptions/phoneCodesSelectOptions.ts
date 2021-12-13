@@ -1,4 +1,4 @@
-import phoneCodes from '../../../../../../../../../core/helpers/phoneCodes.json'
+import phoneCodes from '../../../../../../../../../core/constants/phoneCodes.json'
 
 const tempPhoneCodesSelectOptions = []
 phoneCodes.forEach(item => {

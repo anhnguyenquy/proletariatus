@@ -18,7 +18,7 @@ import {
 	resumeSingleSelectStyles
 } from './components'
 import { useForm } from '../../../../../../../core/hooks'
-import { useStyles } from './style.ts'
+import { useStyles } from './style'
 
 interface Props {
 	open: boolean

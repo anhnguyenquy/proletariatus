@@ -1,4 +1,4 @@
-import { industries } from '../../../../core/helpers'
+import { industries } from '../../../../core/constants'
 import { SelectOption } from '../interfaces'
 
 export const industryOptions: SelectOption[] = industries.map(industry => {

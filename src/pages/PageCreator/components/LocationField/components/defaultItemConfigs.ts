@@ -18,5 +18,5 @@ export const defaultItemConfigs: LocationItemConfig[] = [
     label: 'Street',
     type: 'text',
     fieldName: 'street',
-  },
+  }
 ]

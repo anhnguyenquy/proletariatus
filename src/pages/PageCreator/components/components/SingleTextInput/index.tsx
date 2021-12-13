@@ -15,8 +15,6 @@ export const SingleTextInput = (props: Props): JSX.Element => {
   const { label, valuePrefix, placeholder, description, onChange, customStyles } = props
   const classes = useStyles()
   const customClasses = useClasses(customStyles)
-  console.log(classes)
-  console.log(customClasses)
   return (
     <div className={customStyles ? customClasses['single-text-input'] : classes['single-text-input']}>
       {

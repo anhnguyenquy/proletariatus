@@ -78,6 +78,7 @@ export const useStylesPC = makeStyles({
         textTransform: 'none',
         backgroundColor: 'white',
         fontSize: '0.7rem',
+        fontWeight: 600,
         borderRadius: '20px',
         border: '2px solid #13AA52',
         height: '1.5rem',

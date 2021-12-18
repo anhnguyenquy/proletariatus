@@ -57,7 +57,7 @@ export const useStyles = makeStyles({
         },
         "& .summary-text": {
           color: "black",
-          fontFamily: "Montserrat",
+          fontFamily: 'Montserrat, sans-serif',
           fontWeight: 500,
         },
       },
@@ -105,7 +105,7 @@ export const useStyles = makeStyles({
               "& .page-name": {
                 display: "flex",
                 fontWeight: 600,
-                fontFamily: "Montserrat",
+                fontFamily: 'Montserrat, sans-serif',
                 fontSize: "0.9rem",
                 color: "black",
               },
@@ -121,7 +121,7 @@ export const useStyles = makeStyles({
                 },
                 "& .notification-text": {
                   fontSize: "0.7rem",
-                  fontFamily: "Montserrat",
+                  fontFamily: 'Montserrat, sans-serif',
                   color: "#8A8A8A",
                 },
               },

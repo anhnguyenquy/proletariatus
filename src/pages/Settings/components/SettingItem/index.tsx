@@ -28,14 +28,15 @@ interface Props {
   switchConfig?: SwitchConfig
   color?:
   | 'inherit'
-  | 'red'
   | 'primary'
   | 'secondary'
   | 'success'
   | 'error'
   | 'info'
   | 'warning'
+  | 'red'
   | 'lightBackgroundPrimary'
+  | 'grey'
 }
 
 export default function SettingItem(props: Props): JSX.Element {

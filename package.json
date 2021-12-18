@@ -17,6 +17,8 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "@types/webfontloader": "^1.6.33",
+    "core-js": "latest",
     "extend-shallow": "^3.0.2",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
@@ -25,17 +27,21 @@
     "mui": "^0.0.1",
     "node-sass": "^6.0.1",
     "react": "beta",
+    "react-dev-utils": "latest",
     "react-dom": "beta",
     "react-icons": "^4.3.1",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-ionicons": "^4.2.0",
     "react-responsive": "^8.2.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.1",
     "react-spinners": "^0.11.0",
     "sass": "^1.43.3",
+    "styled-components": "^5.3.3",
     "typescript": "latest",
     "web-vitals": "^1.1.2",
+    "webfontloader": "^1.6.28",
     "webpack": "4.44.2",
     "workbox-build": "^6.3.0",
     "yarn": "^1.22.17"
@@ -69,6 +75,6 @@
     "@types/react-router-dom": "^5.3.1"
   },
   "optionalDependencies": {
-    "fsevents": "^2.3.2"
+    "fsevents": "latest"
   }
 }

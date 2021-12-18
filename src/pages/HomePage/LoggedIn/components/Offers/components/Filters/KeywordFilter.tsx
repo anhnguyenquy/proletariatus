@@ -11,7 +11,7 @@ export const KeywordFilter = (props: Props): JSX.Element => {
     <TextField
       size='small'
       id='keyword'
-      className='filter'
+      className='filter keyword-filter'
       label='Keyword'
       variant='outlined'
       spellCheck={false}

@@ -21,7 +21,7 @@ export const singleTextInputStyle = {
         width: '100%',
         height: 'auto',
         boxSizing: 'border-box',
-        fontFamily: 'Montserrat',
+        fontFamily: 'Montserrat, sans-serif',
         padding: '0.5rem',
         fontSize: '0.7rem',
         resize: 'none',

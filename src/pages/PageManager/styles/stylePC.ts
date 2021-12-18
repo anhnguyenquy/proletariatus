@@ -47,7 +47,7 @@ export const useStylesPC = makeStyles({
         },
         '& .create-new-page-button': {
           textTransform: 'none',
-          fontFamily: 'Montserrat',
+          fontFamily: 'Montserrat, sans-serif',
           color: '#13AA52',
           boxShadow: 'none',
           marginTop: '0.5rem',
@@ -90,7 +90,7 @@ export const useStylesPC = makeStyles({
               '& .bottom-name': {
                 display: 'flex',
                 fontWeight: 600,
-                fontFamily: 'Montserrat',
+                fontFamily: 'Montserrat, sans-serif',
                 fontSize: '0.9rem',
                 color: 'black',
               },
@@ -106,7 +106,7 @@ export const useStylesPC = makeStyles({
                 },
                 '& .notification-text': {
                   fontSize: '0.7rem',
-                  fontFamily: 'Montserrat',
+                  fontFamily: 'Montserrat, sans-serif',
                   color: '#8A8A8A',
                 },
               },

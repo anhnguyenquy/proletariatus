@@ -2,81 +2,12 @@ import { makeStyles } from '@mui/styles'
 
 export const useStyles = makeStyles({
   offers: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: '3rem',
-    boxSizing: 'border-box',
-    width: '100%',
-    alignItems: 'center',
-    minHeight: '27rem',
-    '& .filters': {
-      width: '67.1%',
-      minWidth: '53.25rem',
-      display: 'flex',
-      flexDirection: 'column',
-      height: '7.5rem',
-      '& .line-one': {
-        width: '100%',
-        height: '50%',
-        display: 'flex',
-        alignItems: 'center',
-        '& .filter': {
-          margin: '0 0.5rem',
-          fontSize: '0.9rem !important',
-          backgroundColor: 'white'
-        },
-        '& #country': {
-          width: '20rem',
-        },
-        '& #province': {
-          width: '10rem',
-        },
-        '& #skill': {
-          width: '11.5rem'
-        },
-      },
-      '& .line-two': {
-        width: '100%',
-        height: '50%',
-        display: 'flex',
-        alignItems: 'center',
-        '& .filter': {
-          margin: '0 0.5rem',
-          fontSize: '0.9rem !important',
-          backgroundColor: 'white'
-        },
-        '& #department': {
-          width: '7rem'
-        },
-        '& #employment-type': {
-          width: '9rem'
-        },
-        '& #pay-range': {
-          width: '5rem'
-        },
-        '& #keyword': {
-          width: '10rem',
-          fontSize: '0.9rem !important',
-        },
-        '& .keyword-filter': {
-          borderRadius: '3px'
-        },
-        '& .search-button': {
-          textTransform: 'none',
-          border: '2px solid #13AA52',
-          width: '5rem',
-          marginLeft: '2.5rem',
-          fontSize: '0.9rem !important',
-          backgroundColor: 'white',
-          '&:hover': {
-            border: '2px solid #13AA52',
-          },
-        },
-      },
-    },
+    // width: '100%',
+    alignSelf: 'center',  
+
     '& .content': {
-      width: '45%',
-      minWidth: '35rem',
+      marginBottom: '10rem',
+      minWidth: '36rem',
       marginTop: '1rem',
       display: 'flex',
       flexDirection: 'column',
@@ -88,6 +19,7 @@ export const useStyles = makeStyles({
       paddingBottom: '3rem',
       '& .left': {
         width: '100%',
+        paddingTop: '1.5rem',
         '& .title': {
           width: '100%',
           height: '3.5rem',
@@ -101,10 +33,12 @@ export const useStyles = makeStyles({
           fontSize: '1.2rem',
           marginBottom: '0.5rem'
         },
-      }
+      },
+
+
     },
     '& #expanded': {
-      width: '90%',
+      width: '90vw',
       flexDirection: 'row',
       alignItems: 'flex-start',
       '& .left': {
@@ -113,6 +47,7 @@ export const useStyles = makeStyles({
       '& .right': {
         height: '100%',
         width: '65%',
+
         '& .offer-title': {
           fontWeight: 600,
           fontSize: '1.2rem',

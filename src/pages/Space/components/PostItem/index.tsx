@@ -1,5 +1,5 @@
-import PostImage from '../../../../../../core/media/sample-post-image.png'
-import ComputerScience from '../../../../../../core/media/icons/spaces/computer-science.png'
+import PostImage from '../../../../core/media/sample-post-image.png'
+import ComputerScience from '../../../../core/media/icons/spaces/computer-science.png'
 import { useHistory } from 'react-router-dom'
 import { FaRegCommentAlt } from '@react-icons/all-files/fa/FaRegCommentAlt'
 import { FaShare } from '@react-icons/all-files/fa/FaShare'
@@ -19,7 +19,7 @@ interface Props {
   commentsNo: number
 }
 
-export default function PostItem(props: Props): JSX.Element {
+export const PostItem = (props: Props): JSX.Element => {
   const { voteVisible, votesNo, space, poster, postTime, postTitle, postText, images, commentsNo } = props
   const history = useHistory()
   const classes = useStyles()

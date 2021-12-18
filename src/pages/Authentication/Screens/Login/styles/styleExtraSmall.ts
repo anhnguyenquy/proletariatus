@@ -74,7 +74,7 @@ export const useStylesExtraSmall = makeStyles({
           fontWeight: "bold",
           boxSizing: "content-box",
           boxShadow: "none",
-          fontFamily: "Montserrat",
+          fontFamily: 'Montserrat, sans-serif',
           border: "2px solid transparent",
           "&:hover": {
             backgroundColor: "white",
@@ -107,7 +107,7 @@ export const useStylesExtraSmall = makeStyles({
         fontWeight: "bold",
         boxSizing: "content-box",
         boxShadow: "none",
-        fontFamily: "Montserrat",
+        fontFamily: 'Montserrat, sans-serif',
         border: "2px solid transparent",
         "&:hover": {
           backgroundColor: "white",

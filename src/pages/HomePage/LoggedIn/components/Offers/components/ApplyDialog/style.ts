@@ -138,7 +138,11 @@ export const useStyles = makeStyles({
               marginLeft: 'auto',
               marginRight: '2rem',
               width: '10rem',
-              height: '2rem'
+              height: '2rem',
+              '& .button-text': {
+                fontFamily: 'Montserrat, sans-serif',
+                fontWeight: 600
+              }
             }
           }
         }

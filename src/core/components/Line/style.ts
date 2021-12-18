@@ -1,13 +1,13 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from '@mui/styles'
 
 export interface Props {
-  width? : string | number
+  width?: string | number
 }
 
 export const useStyles = makeStyles({
   line: {
-    borderBottom: "2px solid #E4E6E6",
+    borderBottom: '2px solid #E4E6E6',
     padding: 0,
-    width: (props: Props) => `${ props != undefined && props != null && props != {} ? `${props.width}` : '100%'}`,
+    width: (props: Props) => `${props != undefined && props != null && props != {} ? `${props.width}` : '100%'}`,
   }
-});
+})

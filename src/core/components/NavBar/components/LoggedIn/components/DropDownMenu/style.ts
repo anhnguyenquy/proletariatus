@@ -35,7 +35,7 @@ export const useStyles = makeStyles({
       alignItems: 'center',
 
       '& .filter-input': {
-        fontFamily: 'Montserrat',
+        fontFamily: 'Montserrat, sans-serif',
         border: '1.5px solid #e1e1e1',
         padding: '0.5rem',
         borderRadius: '5px',
@@ -57,7 +57,7 @@ export const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        fontFamily: 'Montserrat',
+        fontFamily: 'Montserrat, sans-serif',
         marginTop: '0.75rem',
         '& .section-title': {
           color: '#888089',
@@ -78,7 +78,7 @@ export const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        fontFamily: 'Montserrat',
+        fontFamily: 'Montserrat, sans-serif',
         marginTop: '0.75rem',
         '& .section-title': {
           color: '#888089',
@@ -99,7 +99,7 @@ export const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        fontFamily: 'Montserrat',
+        fontFamily: 'Montserrat, sans-serif',
         marginTop: '0.75rem',
         '& .section-title': {
           color: '#888089',

@@ -1,12 +1,17 @@
+import { Color } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
 declare module '@mui/material/styles' {
   interface Palette {
     lightBackgroundPrimary: Palette['primary']
     red: Palette['primary']
+    // @ts-ignore 
+    grey: Palette['primary']
   }
   interface PaletteOptions {
     lightBackgroundPrimary: PaletteOptions['primary']
     red: PaletteOptions['primary']
+    // @ts-ignore 
+    grey: PaletteOptions['primary']
   }
 
   // interface PaletteColor {
@@ -31,5 +36,9 @@ export const theme = createTheme({
     red: {
       main: '#F85149',
     },
+    grey: {
+      // @ts-ignore 
+      main: '#888089'
+    }
   },
 })

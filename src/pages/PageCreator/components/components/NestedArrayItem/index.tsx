@@ -28,10 +28,12 @@ export interface ItemProps<T> {
   onDelete?: () => void
   inArrayInput: boolean
   customStyles?: object
+  customStylesTextInput?: object
+  customStylesSelectInput?: object
 }
 
 export const NestedArrayItem = <T,>(props: ItemProps<T>): JSX.Element => {
-  const { values, config, label, onChange, onItemChange, onDelete, inArrayInput, customStyles } = props
+  const { values, config, label, onChange, onItemChange, onDelete, inArrayInput, customStyles, customStylesTextInput, customStylesSelectInput } = props
   const [itemValues, setItemValues] = useState<T>(values)
   const updateItemValues = (fieldName: string, newValue: string | number) => {
     let currentItemValues = { ...itemValues }
@@ -69,6 +71,7 @@ export const NestedArrayItem = <T,>(props: ItemProps<T>): JSX.Element => {
                 onChange={newValue => {
                   updateItemValues(subItemConfig.fieldName, newValue)
                 }}
+                customStyles={customStylesTextInput}
               />
             )}
             {subItemConfig.type == 'select' && (
@@ -80,6 +83,7 @@ export const NestedArrayItem = <T,>(props: ItemProps<T>): JSX.Element => {
                   updateItemValues(subItemConfig.fieldName, newValue)
                 }}
                 selectStyles={newSelectStyles}
+                customStyles={customStylesSelectInput}
               />
             )}
           </div>

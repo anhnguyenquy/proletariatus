@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom'
-import { Button, Typography } from '@mui/material'
+import { Button } from '@mui/material'
 import { useStyles } from './style'
 
 interface Props {

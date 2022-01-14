@@ -3,13 +3,14 @@ import { Button } from '@mui/material'
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus'
 import { NavBar, Line } from '../../core/components'
 import Journalism from '../../core/media/icons/spaces/journalism.png'
-import { Offers, Posts, InfoBar, RedirectItem } from './components'
+import { Offers, Posts, InfoBar, RedirectItem, CreateOfferDialog } from './components'
 import { useStylesPC } from './styles'
 
 export const Space = (): JSX.Element => {
   const classesPC = useStylesPC()
   const [active, setActive] = useState('offers')
   const [offersExpanded, setOffersExpanded] = useState(false)
+  const [dialogOpen, setDialogOpen] = useState(false)
   return (
     <div className={classesPC.space}>
       <NavBar loggedIn={true} current='default' />
@@ -33,9 +34,12 @@ export const Space = (): JSX.Element => {
             </Button>
             {
               active == 'offers' &&
-              <Button className='create-offer-button' variant='outlined' size='small' startIcon={<FaPlus className='create-offer-button-icon' />}>
-                <div className='button-text'>Create Offer</div>
-              </Button>
+              <>
+                <Button onClick={() => { setDialogOpen(true) }} className='create-offer-button' variant='outlined' size='small' startIcon={<FaPlus className='create-offer-button-icon' />}>
+                  <div className='button-text'>Create Offer</div>
+                </Button>
+                <CreateOfferDialog open={dialogOpen} onClose={() => { setDialogOpen(false) }} />
+              </>
             }
           </div>
           <Line />

@@ -19,7 +19,7 @@ export const defaultMenuItemStyles = {
 
 interface Props {
   label?: string
-  value: string
+  value: string | number
   options?: SelectOption[]
   valuePrefix?: string
   placeholder?: string

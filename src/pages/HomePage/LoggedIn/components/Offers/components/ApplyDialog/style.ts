@@ -5,17 +5,19 @@ export const useStyles = makeStyles({
     '& .MuiDialog-container': {
       '& .MuiPaper-root': {
         maxWidth: 'none',
-        // maxHeight: 'none',
         overflow: 'visible',
         '& .dialog-content': {
           width: '42.5rem',
           height: '33rem',
+          minHeight: '33rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           boxSizing: 'border-box',
+          backgroundColor: 'white',
+          borderRadius: '5px',
           '& .dialog-title': {
-            fontWeight: 500,
+            fontWeight: 600,
             borderBottom: '3px solid #E4E6E6',
             width: '100%',
             display: 'flex',
@@ -29,7 +31,7 @@ export const useStyles = makeStyles({
             maxHeight: 'calc(100% - 3rem - 3px)',
             overflowY: 'scroll',
             boxSizing: 'border-box',
-            // backgroundColor: 'white',
+            backgroundColor: 'white',
             '& .contact-info': {
               fontSize: '1.2rem',
               fontWeight: 600,
@@ -131,6 +133,7 @@ export const useStyles = makeStyles({
             display: 'flex',
             alignItems: 'center',
             height: '3rem',
+            minHeight: '3rem',
             '& .submit-application-button': {
               textTransform: 'none',
               borderRadius: '20px',

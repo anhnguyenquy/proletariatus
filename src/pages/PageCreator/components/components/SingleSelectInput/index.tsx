@@ -41,7 +41,7 @@ export const SingleSelectInput = (props: Props): JSX.Element => {
       {
         label && <div className='label'>{label}</div>
       }
-      <div className='select-container' style={label ? { marginTop: '0.75rem' } : {}}>
+      <div className='select-container'>
         {valuePrefix && <span className='value-prefix'>{valuePrefix}</span>}
         <Select
           size='small'

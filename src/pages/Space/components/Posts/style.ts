@@ -50,12 +50,10 @@ export const useStyles = makeStyles({
           outline: 'none',
           fontWeight: '300',
           '&:hover': {
-            border: '1px solid #16C172',
-            backgroundColor: 'white',
+            border: '1px solid #888089'
           },
           '&:focus': {
-            border: '1px solid #16C172',
-            backgroundColor: 'white',
+            border: '1px solid #888089'
           }
         }
       }

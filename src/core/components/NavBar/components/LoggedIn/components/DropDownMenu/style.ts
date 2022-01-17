@@ -71,6 +71,45 @@ export const useStyles = makeStyles({
           flexDirection: 'column',
           alignItems: 'center',
           width: '100%',
+          '& .new-space-button': {
+            border: '1px solid transparent !important',
+            width: '14rem',
+            display: 'flex',
+            justifyContent: 'flex-start !important',
+            alignItems: 'center',
+            height: '2.25rem',
+            padding: '0 !important',
+            margin: '0.1rem !important',
+            '& .start-icon': {
+              color: 'white',
+              backgroundColor: '#13AA52',
+              border: '1px solid #13AA52',
+              padding: '0.1rem',
+              fontSize: '0.7rem',
+              borderRadius: '3px',
+              marginLeft: '1.5rem'
+            },
+            '& .button-text': {
+              flexGrow: 1,
+              height: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+              fontWeight: '400',
+              textTransform: 'none',
+              marginLeft: '0.5rem'
+            },
+            '& .space-title': {
+              fontWeight: '500',
+              fontSize: '0.75rem',
+              height: '0.7rem',
+              color: 'black',
+              padding: 0,
+              display: 'flex',
+              alignItems: 'center',
+            }
+          }
         },
       },
       '& .following-section': {

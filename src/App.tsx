@@ -27,7 +27,7 @@ const App = () => {
       google: {
         families: ['Montserrat']
       }
-    });
+    })
    }, [])
   return (
     <ThemeProvider theme={theme}>

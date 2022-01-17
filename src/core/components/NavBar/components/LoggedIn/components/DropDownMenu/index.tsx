@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Popover, Button, Typography } from '@mui/material'
 import { bindTrigger, bindPopover } from 'material-ui-popup-state'
 import { usePopupState } from 'material-ui-popup-state/hooks'
@@ -5,6 +6,7 @@ import { FaHome } from '@react-icons/all-files/fa/FaHome'
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { RedirectItem } from './RedirectItem'
+import { CreateSpaceDialog } from './CreateSpaceDialog'
 import Business from '../../../../../../../core/media/icons/spaces/business.png'
 import Economics from '../../../../../../../core/media/icons/spaces/economics.png'
 import Biology from '../../../../../../../core/media/icons/spaces/biology.png'
@@ -17,11 +19,12 @@ import ComputerScience from '../../../../../../../core/media/icons/spaces/comput
 import { useStyles } from './style'
 
 export const DropDownMenu = (): JSX.Element => {
-  const classes = useStyles()
+  const [dialogOpen, setDialogOpen] = useState(false)
   const popupState = usePopupState({
     variant: 'popover',
     popupId: 'popup-state',
   })
+  const classes = useStyles()
   return (
     <div className={classes['drop-down-menu']}>
       <Button
@@ -34,12 +37,12 @@ export const DropDownMenu = (): JSX.Element => {
             style={
               popupState.isOpen
                 ? {
-                    transform: 'rotate(180deg)',
-                    transition: 'transform 0.3s',
-                  }
+                  transform: 'rotate(180deg)',
+                  transition: 'transform 0.3s',
+                }
                 : {
-                    transition: 'transform 0.3s',
-                  }
+                  transition: 'transform 0.3s',
+                }
             }
           />
         }
@@ -74,23 +77,16 @@ export const DropDownMenu = (): JSX.Element => {
           <div className='my-spaces-section'>
             <div className='section-title'>MY SPACES</div>
             <div className='space-items'>
-              <RedirectItem
-                iconObject={
-                  <FaPlus
-                    className='start-icon'
-                    style={{
-                      color: 'white',
-                      backgroundColor: '#13AA52',
-                      border: '1px solid #13AA52',
-                      padding: '0.1rem',
-                      fontSize: '0.7rem',
-                      borderRadius: '3px',
-                    }}
-                  />
-                }
-                title='Create Space'
-                titleStyle={{ fontWeight: '500', fontSize: '0.75rem' }}
-              />
+              <Button
+                className='new-space-button'
+                variant='outlined'
+                onClick={() => { setDialogOpen(true) }}
+                startIcon={<FaPlus className='start-icon' />}>
+                <div className='button-text'>
+                  <div className='space-title'>Create Space</div>
+                </div>
+              </Button>
+              <CreateSpaceDialog open={dialogOpen} onClose={() => { setDialogOpen(false) }} />
               <RedirectItem
                 icon={Business}
                 title='Business'

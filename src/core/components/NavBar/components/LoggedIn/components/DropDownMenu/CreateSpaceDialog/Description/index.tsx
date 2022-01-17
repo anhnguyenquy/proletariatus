@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Quill } from '../../../../core/components'
+import { Quill } from '../../../../../../..'
 import { useStyles } from './style'
 
 interface Props {
   onChange: (newValue: string) => void
 }
 
-export const Custom = (props: Props): JSX.Element => {
+export const Description = (props: Props): JSX.Element => {
   const { onChange } = props
   const [value, setValue] = useState('')
   const classes = useStyles()
@@ -14,8 +14,8 @@ export const Custom = (props: Props): JSX.Element => {
     onChange(value)
   }, [value])
   return (
-    <div className={classes['custom']}>
-      <div className='label'>How to apply</div>
+    <div className={classes['description']}>
+      <div className='label'>Description</div>
       <Quill
         defaultValue={value}
         onChange={(newValue) => {
@@ -23,7 +23,7 @@ export const Custom = (props: Props): JSX.Element => {
         }}
         max={3000}
       />
-      <div className='description'>
+      <div className='dezcription'>
         Give specific instructions on how to apply for your offer (3000 characters remaining)
       </div>
     </div>

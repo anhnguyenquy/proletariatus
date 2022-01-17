@@ -5,6 +5,8 @@ import { ProfileDetails } from '../interfaces'
 import { pageTypeOptions } from './pageTypeOptions'
 import { industryOptions } from './industryOptions'
 import { selectStyles } from './selectStyles'
+import { styles } from '../components/FileUploadPrompt/style'
+import _ from 'lodash'
 
 interface Props {
   onChange: (newValue: ProfileDetails) => void
@@ -22,7 +24,8 @@ export const ProfileDetailsField = (props: Props): JSX.Element => {
   useEffect(() => {
     onChange(formValue)
   }, [formValue])
-
+  const clonedStyles = _.cloneDeep(styles)
+  clonedStyles['file-upload-prompt'].margin = ' 0 0 0.75rem 0'
   return (
     <Field title='Profile details'>
       <CheckList
@@ -45,6 +48,7 @@ export const ProfileDetailsField = (props: Props): JSX.Element => {
         accept='.jpg, .jpeg, .png'
         fileInputID='logo-input'
         onChange={(newValue: File) => { changeFormValue('logo', newValue) }}
+        customStyles={clonedStyles}
       />
       <FileUploadPrompt
         title='Cover Photo'
@@ -53,6 +57,7 @@ export const ProfileDetailsField = (props: Props): JSX.Element => {
         accept='.jpg, .jpeg, .png'
         fileInputID='cover-input'
         onChange={(newValue: File) => { changeFormValue('cover', newValue) }}
+        customStyles={clonedStyles}
       />
       <SingleParagraphInput
         label='About'

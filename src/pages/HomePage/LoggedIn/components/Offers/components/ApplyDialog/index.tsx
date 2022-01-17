@@ -22,7 +22,7 @@ import { useStyles } from './style'
 
 interface Props {
 	open: boolean
-	onClose: (value: string) => void
+	onClose: () => void
 }
 
 export const ApplyDialog = (props: Props): JSX.Element => {

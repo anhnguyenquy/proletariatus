@@ -24,7 +24,7 @@ import { useForm } from '../../../../core/hooks'
 
 interface Props {
   open: boolean
-  onClose: (value: string) => void
+  onClose: () => void
 }
 
 export const CreateOfferDialog = (props: Props): JSX.Element => {
@@ -59,7 +59,7 @@ export const CreateOfferDialog = (props: Props): JSX.Element => {
         <div className='dialog-title'>Create Offer</div>
         <div className='actual-content'>
           {/* 
-          //TODO: Fix Quill (max characters and spacing issues)
+          // TODO: Fix Quill (max characters and spacing issues)
           */}
           <SingleTextInput
             label='Offer Title*'

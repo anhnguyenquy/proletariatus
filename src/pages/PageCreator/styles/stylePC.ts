@@ -10,7 +10,7 @@ export const useStylesPC = makeStyles({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingBottom: '50rem',
+    paddingBottom: '3rem',
     '& .top-section': {
       backgroundColor: 'white',
       display: 'flex',

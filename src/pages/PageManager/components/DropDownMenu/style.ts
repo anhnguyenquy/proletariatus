@@ -58,7 +58,7 @@ export const useStyles = makeStyles({
         "& .summary-text": {
           color: "black",
           fontFamily: 'Montserrat, sans-serif',
-          fontWeight: 500,
+          fontWeight: 700,
         },
       },
     },

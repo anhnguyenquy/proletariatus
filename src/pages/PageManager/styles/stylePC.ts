@@ -53,6 +53,7 @@ export const useStylesPC = makeStyles({
           marginTop: '0.5rem',
           marginBottom: '0.5rem',
           width: '16rem',
+          fontWeight: 700
         },
         '& .bottom-items': {
           width: '90%',

@@ -19,7 +19,7 @@ export const singleTextInputStyle = {
         marginRight: '0.25rem'
       },
       '& input': {
-        border: '1px solid #5F5F5F',
+        border: '1px solid #C4C4C4',
         borderRadius: '5px',
         width: '100%',
         minWidth: '13rem',
@@ -34,7 +34,7 @@ export const singleTextInputStyle = {
     },
     '& .description': {
       marginTop: '0.5rem',
-      fontSize: '0.65rem'
+      fontSize: '0.65rem',
     }
   }
 }

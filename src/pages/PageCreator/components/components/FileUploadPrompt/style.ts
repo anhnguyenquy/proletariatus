@@ -1,9 +1,9 @@
 import { makeStyles } from '@mui/styles'
 
-export const useStyles = makeStyles({
+export const styles = {
   'file-upload-prompt': {
     margin: '0.75rem 0',
-    '& .title': {
+    '& .prompt-title': {
       color: '#8A8A8A !important',
       fontWeight: 500,
       fontSize: '0.8rem',
@@ -13,8 +13,12 @@ export const useStyles = makeStyles({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      height: '2.75rem',
+      minHeight: '2.75rem',
       borderRadius: '5px',
+      marginTop: '0.5rem',
+      '& .uploaded-file': {
+        height: '5rem !important',
+      },
       '& .upload-text': {
         color: 'black',
         fontWeight: 600,
@@ -29,12 +33,21 @@ export const useStyles = makeStyles({
         border: '2px solid #13AA52',
         height: '1.5rem',
         marginRight: '3rem',
-        '& .button-text': {}
+        '& .button-text': {
+          fontWeight: 600,
+          margin: '0 0.5rem'
+        }
       }
+    },
+    '& .uploaded': {
+      justifyContent: 'center',
+      padding: '1rem'
     },
     '& .description': {
       marginTop: '0.5rem',
       fontSize: '0.65rem'
     }
   }
-})
+}
+
+export const useStyles = makeStyles(styles)

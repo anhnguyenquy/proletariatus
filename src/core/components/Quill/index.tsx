@@ -9,6 +9,7 @@ interface Props {
   max?: number
 }
 
+// TODO: Add image to Quill
 export const Quill = (props: Props): JSX.Element => {
   const { defaultValue, onChange, max } = props
   const [value, setValue] = useState(defaultValue)

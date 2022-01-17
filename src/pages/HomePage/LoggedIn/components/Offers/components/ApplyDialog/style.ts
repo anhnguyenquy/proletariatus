@@ -70,7 +70,8 @@ export const useStyles = makeStyles({
               display: 'flex',
               alignItems: 'center',
               boxSizing: 'border-box',
-              height: '4.5rem'
+              height: '4.5rem',
+              marginTop: '0.75rem'
             },
             '& .resume-section': {
               '& .resume-section-title': {

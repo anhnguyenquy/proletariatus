@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import WebFont from 'webfontloader'
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from './core/components/'
@@ -28,44 +28,25 @@ const App = () => {
         families: ['Montserrat']
       }
     })
-   }, [])
+  }, [])
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <UserContext.Provider value={loggedIn}>
-          <div className={classes.App}>
-            <Switch>
-              <Route exact={true} path='/'>
-                <HomePage loggedIn={loggedIn} />
-              </Route>
-              <Route path='/login'>
-                <Login />
-              </Route>
-              <Route path='/sign-up'>
-                <SignUp />
-              </Route>
-              <Route path='/pages'>
-                <PageManager />
-              </Route>
-              <Route path='/new-page'>
-                <PageCreator />
-              </Route>
-              <Route path='/settings'>
-                <Settings />
-              </Route>
-              <Route path='/s'>
-                <Space />
-              </Route>
-              {/*<Route path='/u'>
-          <Profile />
-        </Route>
-        <Route path='/p'>
-          <Page />
-        </Route> */}
-            </Switch>
-          </div>
-        </UserContext.Provider>
-      </Router>
+      <UserContext.Provider value={loggedIn}>
+        <div className={classes.App}>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<HomePage loggedIn={loggedIn} />} />
+              <Route path='login' element={<Login />} />
+              <Route path='sign-up' element={<SignUp />} />
+              <Route path='pages' element={<PageManager />} />
+              <Route path='new-page' element={<PageCreator />} />
+              <Route path='settings' element={<Settings />} />
+              <Route path='s' element={<Space />} />
+              {/* <Route path='u' element={<Profile />}/> */}
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </UserContext.Provider>
     </ThemeProvider>
   )
 }

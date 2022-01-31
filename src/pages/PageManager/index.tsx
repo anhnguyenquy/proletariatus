@@ -10,7 +10,7 @@ import { FaCompass } from '@react-icons/all-files/fa/FaCompass'
 import { FaCheck } from '@react-icons/all-files/fa/FaCheck'
 import { FaUserPlus } from '@react-icons/all-files/fa/FaUserPlus'
 import fptLogo from '../../core/media/icons/page-logo.png'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
   useStylesPC,
   //   useStylesTablet,
@@ -82,7 +82,7 @@ export const PageManager = (): JSX.Element => {
   //   const classesPhone = useStylesPhone();
   //   const classesExtraSmall = useStylesExtraSmall();
   useDocumentTitle('Pages | Placeholder')
-  const history = useHistory()
+  const navigate = useNavigate()
   return (
     <div className={classesPC['page-manager']}>
       {/* <div

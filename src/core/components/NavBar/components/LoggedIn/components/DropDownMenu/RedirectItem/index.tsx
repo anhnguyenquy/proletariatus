@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button, Typography } from '@mui/material'
 import { useStyles } from './style'
 
@@ -11,12 +11,12 @@ interface Props {
 }
 
 export const RedirectItem = (props: Props): JSX.Element => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const { icon, iconObject, title, spaceAddress, titleStyle } = props
   const classes = useStyles()
   const handleClick = () => {
     if (spaceAddress != undefined && spaceAddress != '') {
-      history.push(`/${spaceAddress}`)
+      navigate(`/${spaceAddress}`)
     }
   }
   return (

@@ -1,5 +1,5 @@
 import { useState, useEffect, ChangeEvent } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
 import { PageIdentityField, LocationField, ContactsField, ProfileDetailsField } from './components'
@@ -23,7 +23,7 @@ export const PageCreator = (): JSX.Element => {
   //   const classesPhone = useStylesPhone();
   //   const classesExtraSmall = useStylesExtraSmall();
   useDocumentTitle('Create a Page | Placeholder')
-  const history = useHistory()
+  const navigate = useNavigate()
   const { formValue, changeFormValue, resetFormValue } = useForm<PageCreationFormDefaultValue>(pageCreationFormDefaultValue)
   const [verified, setVerified] = useState(false)
 

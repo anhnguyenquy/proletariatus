@@ -3,7 +3,7 @@ import Button from '@mui/material/Button'
 import LoadingButton from '@mui/lab/LoadingButton'
 import { useDeviceBreakPoint } from '../../../../core/hooks'
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
   useStylesPC,
   useStylesTablet,
@@ -17,7 +17,7 @@ export const Login = (): JSX.Element => {
   const classesTablet = useStylesTablet()
   const classesPhone = useStylesPhone()
   const classesExtraSmall = useStylesExtraSmall()
-  const history = useHistory()
+  const navigate = useNavigate()
   const [loggingIn, setLoggingIn] = useState(false)
   const handleLogin = () => {
     setLoggingIn(true)

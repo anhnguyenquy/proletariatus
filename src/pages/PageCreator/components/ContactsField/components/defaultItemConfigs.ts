@@ -1,4 +1,4 @@
-import { ContactItemConfig } from '../../interfaces'
+import { ContactItemConfig } from '../../../subcomponents'
 
 export const defaultItemConfigs: ContactItemConfig[] = [
   {

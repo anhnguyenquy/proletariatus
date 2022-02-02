@@ -5,7 +5,7 @@ import { Button, Dialog } from '@mui/material'
 import { useForm } from '../../hooks'
 import { GiSelect } from '@react-icons/all-files/gi/GiSelect'
 import { useStyles } from './style'
-import { SingleTextInput } from '../../../pages/PageCreator/components/components'
+import { SingleTextInput } from '../../../pages/PageCreator/subcomponents'
 import { Quill } from '..'
 
 interface PostCreationFormDefaultValue {

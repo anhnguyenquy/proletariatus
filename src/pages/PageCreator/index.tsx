@@ -7,8 +7,8 @@ import { NavBar } from '../../core/components'
 import { useDeviceBreakPoint, useDocumentTitle, useForm } from '../../core/hooks'
 import { ReactComponent as BuildingIcon } from '../../core/media/icons/Building.svg'
 import { ReactComponent as ArrowBack } from '../../core/media/icons/ArrowBack.svg'
-import { pageCreationFormDefaultValue } from './components/components'
-import { PageIdentity, Location, Contact, ProfileDetails, PageCreationFormDefaultValue } from './components/interfaces'
+import { pageCreationFormDefaultValue } from './subcomponents'
+import { PageIdentity, Location, Contact, ProfileDetails, PageCreationFormDefaultValue } from './subcomponents/interfaces'
 import {
   useStylesPC,
   //   useStylesTablet,

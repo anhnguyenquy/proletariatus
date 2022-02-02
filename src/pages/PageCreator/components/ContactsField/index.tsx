@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Field, NestedArrayInput } from '../components'
-import { Contact } from '../interfaces'
+import { Field, NestedArrayInput, Contact } from '../../subcomponents'
 import { defaultItemConfigs, defaultItem } from './components'
 
 interface Props {

@@ -1,4 +1,4 @@
-import { SelectOption } from '../interfaces'
+import { SelectOption } from '../../subcomponents/interfaces'
 
 export const pageTypeOptions: SelectOption[] = [
   { display: 'Club', value: 'Club' },
@@ -12,5 +12,5 @@ export const pageTypeOptions: SelectOption[] = [
     display: 'Non-governmental Organization (NGO)',
     value: 'Non-governmental Organization (NGO)',
   },
-  { display: 'Other', value: 'Other' },
+  { display: 'Other', value: 'Other' }
 ]

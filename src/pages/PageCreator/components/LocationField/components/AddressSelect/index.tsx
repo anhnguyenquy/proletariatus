@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import { NestedArrayItem } from '../../../components'
-import { Address } from '../../../interfaces'
+import { NestedArrayItem, Address, LocationItemConfig } from '../../../../subcomponents'
 import { defaultItemConfigs } from '..'
-import { LocationItemConfig } from '../../../interfaces'
 import { countries } from '../../../../../../core/constants'
 import _ from 'lodash'
 

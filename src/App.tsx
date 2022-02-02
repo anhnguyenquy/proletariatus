@@ -4,7 +4,7 @@ import WebFont from 'webfontloader'
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from './core/components/'
 import useStyles from './appStyle'
-import { Login, SignUp, PageManager, HomePage, PageCreator, Settings, Space } from './pages'
+import { Login, SignUp, PageManager, HomePage, PageCreator, Settings, Space, Profile } from './pages'
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
@@ -17,7 +17,9 @@ declare module '@mui/material/Button' {
 type UserContext = {
 
 }
+
 export const UserContext = React.createContext<UserContext>(undefined)
+
 const App = () => {
   const classes = useStyles()
   // const [userData, setUserData] = useState()
@@ -30,9 +32,9 @@ const App = () => {
     })
   }, [])
   return (
-    <ThemeProvider theme={theme}>
-      <UserContext.Provider value={loggedIn}>
-        <div className={classes.App}>
+    <div className={classes.App}>
+      <ThemeProvider theme={theme}>
+        <UserContext.Provider value={loggedIn}>
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<HomePage loggedIn={loggedIn} />} />
@@ -42,12 +44,14 @@ const App = () => {
               <Route path='new-page' element={<PageCreator />} />
               <Route path='settings' element={<Settings />} />
               <Route path='s' element={<Space />} />
-              {/* <Route path='u' element={<Profile />}/> */}
+              <Route path='u' element={<Profile />}>
+                <Route path=':id' element={<Profile />} />
+              </Route>
             </Routes>
           </BrowserRouter>
-        </div>
-      </UserContext.Provider>
-    </ThemeProvider>
+        </UserContext.Provider>
+      </ThemeProvider>
+    </div>
   )
 }
 

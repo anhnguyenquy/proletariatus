@@ -35,7 +35,7 @@ export const useStyles = makeStyles({
       textTransform: 'none',
       backgroundColor: '#16C172',
       width: '6rem',
-      mindWidth: '6rem',
+      minWidth: '6rem',
       boxShadow: 'none',
       // border: "2px solid #16C172",
       '&:hover': {

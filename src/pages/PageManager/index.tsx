@@ -1,16 +1,15 @@
-import { Line, NavBar } from '../../core/components'
+import { useNavigate } from 'react-router-dom'
+import { Button, IconButton } from '@mui/material'
 import { useDeviceBreakPoint, useDocumentTitle } from '../../core/hooks'
-import { FaCog } from '@react-icons/all-files/fa/FaCog'
-import IconButton from '@mui/material/IconButton'
+import { Line, NavBar } from '../../core/components'
 import { DropDownMenu } from './components'
-import Button from '@mui/material/Button'
+import { FaCog } from '@react-icons/all-files/fa/FaCog'
 import { BsPlus } from '@react-icons/all-files/bs/BsPlus'
 import { FaCircle } from '@react-icons/all-files/fa/FaCircle'
 import { FaCompass } from '@react-icons/all-files/fa/FaCompass'
 import { FaCheck } from '@react-icons/all-files/fa/FaCheck'
 import { FaUserPlus } from '@react-icons/all-files/fa/FaUserPlus'
 import fptLogo from '../../core/media/icons/page-logo.png'
-import { useNavigate } from 'react-router-dom'
 import {
   useStylesPC,
   //   useStylesTablet,

@@ -1,11 +1,10 @@
 import { useEffect, ChangeEvent } from 'react'
 import { useForm } from '../../../../core/hooks'
-import { Field, CheckList, SingleSelectInput, defaultSelectStyles, FileUploadPrompt, SingleParagraphInput } from '../components'
-import { ProfileDetails } from '../interfaces'
+import { Field, CheckList, SingleSelectInput, defaultSelectStyles, FileUploadPrompt, SingleParagraphInput, ProfileDetails } from '../../subcomponents'
 import { pageTypeOptions } from './pageTypeOptions'
 import { industryOptions } from './industryOptions'
 import { selectStyles } from './selectStyles'
-import { styles } from '../components/FileUploadPrompt/style'
+import { styles } from '../../subcomponents/FileUploadPrompt/style'
 import _ from 'lodash'
 
 interface Props {

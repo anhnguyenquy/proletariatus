@@ -38,7 +38,7 @@ export const useStylesPC = makeStyles({
           },
           '& .posts-button': {
             width: '6rem',
-            mindWidth: '6rem',
+            minWidth: '6rem',
             textTransform: 'none',
             borderRadius: '3px',
             boxShadow: 'none',

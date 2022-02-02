@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect } from 'react'
 import _ from 'lodash'
 import { Button, Dialog } from '@mui/material'
 import { useForm } from '../../../../../../../hooks'
-import { FileUploadPrompt } from '../../../../../../../../pages/PageCreator/components/components'
+import { FileUploadPrompt } from '../../../../../../../../pages/PageCreator/subcomponents'
 import { Description } from './Description'
 import { useStyles, logoInputStyles } from './style'
 

@@ -1,4 +1,4 @@
-import { defaultSelectStyles } from '../components'
+import { defaultSelectStyles } from '../../subcomponents'
 import _ from 'lodash'
 
 let tempSelectStyles = _.cloneDeep(defaultSelectStyles) 

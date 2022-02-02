@@ -3,7 +3,8 @@ import { Button } from '@mui/material'
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus'
 import { NavBar, Line } from '../../core/components'
 import Journalism from '../../core/media/icons/spaces/journalism.png'
-import { Offers, Posts, InfoBar, RedirectItem, CreateOfferDialog } from './components'
+import { Offers, Posts } from './components'
+import { InfoBar, RedirectItem, CreateOfferDialog } from './subcomponents'
 import { useStylesPC } from './styles'
 
 export const Space = (): JSX.Element => {

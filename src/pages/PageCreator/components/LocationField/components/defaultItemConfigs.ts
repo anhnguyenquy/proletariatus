@@ -1,4 +1,4 @@
-import { LocationItemConfig } from '../../interfaces'
+import { LocationItemConfig } from '../../../subcomponents/interfaces'
 import { countryOptions } from '.'
 
 export const defaultItemConfigs: LocationItemConfig[] = [

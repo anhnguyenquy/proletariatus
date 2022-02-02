@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
-import { Field, SingleTextInput } from '../components'
+import { Field, SingleTextInput, PageIdentity } from '../../subcomponents'
 import { useForm } from '../../../../core/hooks'
-import { PageIdentity } from '../interfaces'
 
 interface Props {
   onChange: (newValue: PageIdentity) => void

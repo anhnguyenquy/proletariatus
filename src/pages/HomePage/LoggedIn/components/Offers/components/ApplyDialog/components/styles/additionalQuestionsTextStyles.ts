@@ -1,4 +1,4 @@
-import { singleTextInputStyle } from '../../../../../../../../PageCreator/components/components/SingleTextInput/style'
+import { singleTextInputStyle } from '../../../../../../../../PageCreator/subcomponents/SingleTextInput/style'
 import _ from 'lodash'
 
 let temp = _.cloneDeep(singleTextInputStyle)

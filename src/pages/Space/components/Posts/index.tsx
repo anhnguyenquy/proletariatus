@@ -1,4 +1,4 @@
-import { PostItem } from '../'
+import { PostItem } from '../../subcomponents'
 import { useStyles } from './style'
 
 export const Posts = (): JSX.Element => {

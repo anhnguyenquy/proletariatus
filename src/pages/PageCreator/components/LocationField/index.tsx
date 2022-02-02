@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Field, NestedArrayInput, NestedArrayItem, } from '../components'
-import { Address, LocationItemConfig, Location } from '../interfaces'
-import { countries } from '../../../../core/constants'
-import { defaultItem, defaultItemConfigs, AddressSelect, AddressesSelect } from './components'
 import _ from 'lodash'
 import { useForm } from '../../../../core/hooks'
+import { Field, NestedArrayInput, NestedArrayItem, Address, LocationItemConfig, Location } from '../../subcomponents'
+import { countries } from '../../../../core/constants'
+import { defaultItem, defaultItemConfigs, AddressSelect, AddressesSelect } from './components'
 
 interface Props {
   onChange: (newValue: Location) => void

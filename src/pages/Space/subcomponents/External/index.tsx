@@ -1,4 +1,4 @@
-import { SingleTextInput } from '../../../PageCreator/subcomponents'
+import { SingleTextInput } from '../../../PageCreator/components'
 
 interface Props {
   onChange: (newValue: string) => void

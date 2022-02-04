@@ -1,18 +1,19 @@
+import Box from '@mui/material/Box'
 import { useStyles } from './style'
 
 interface Props {
   title: string
   children?: JSX.Element | JSX.Element[] | string
-  style?: object
+  sx?: object
 }
 
 export const Field = (props: Props): JSX.Element => {
-  const { title, children, style } = props
+  const { title, children, sx } = props
   const classes = useStyles()
   return (
-    <div className={classes.field} style={style}>
+    <Box className={classes.field} sx={sx}>
       <div className='title'>{title}</div>
       {children}
-    </div>
+    </Box>
   )
 }

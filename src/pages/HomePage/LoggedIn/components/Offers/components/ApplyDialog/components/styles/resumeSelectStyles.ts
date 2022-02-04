@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { defaultSelectStyles } from '../../../../../../../../PageCreator/subcomponents'
+import { defaultSelectStyles } from '../../../../../../../../PageCreator/components'
 
 let temp = _.cloneDeep(defaultSelectStyles)
 temp.width = '13rem !important'

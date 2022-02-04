@@ -1,5 +1,5 @@
 import { OfferCreationFormDefaultValue } from '.'
-import { defaultItem } from '../../PageCreator/components/LocationField/components'
+import { defaultItem } from '../../PageCreator/fields/LocationField/components'
 
 export const offerCreationFormDefaultValue: OfferCreationFormDefaultValue = {
   offerTitle: '',

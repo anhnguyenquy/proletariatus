@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import { NestedArrayItem } from '../../../PageCreator/subcomponents'
-import { Address, LocationItemConfig } from '../../../PageCreator/subcomponents/interfaces'
-import { defaultItemConfigs } from '../../../PageCreator/components/LocationField/components'
+import { NestedArrayItem, Address, LocationItemConfig } from '../../../PageCreator/components'
+import { defaultItemConfigs } from '../../../PageCreator/fields/LocationField/components'
 import { countries } from '../../../../core/constants'
 import _ from 'lodash'
 

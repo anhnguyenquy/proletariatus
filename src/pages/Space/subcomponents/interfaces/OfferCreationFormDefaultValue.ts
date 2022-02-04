@@ -1,4 +1,4 @@
-import { Address } from '../../../PageCreator/subcomponents'
+import { Address } from '../../../PageCreator/components'
 
 export interface OfferCreationFormDefaultValue {
   offerTitle: string

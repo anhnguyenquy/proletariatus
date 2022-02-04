@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles'
 import _ from 'lodash'
-import { singleSelectInputStyle } from '../../../../../../../../PageCreator/subcomponents/SingleSelectInput/style'
+import { singleSelectInputStyle } from '../../../../../../../../PageCreator/components/SingleSelectInput/style'
 
 let newSingleSelectStyle = _.cloneDeep(singleSelectInputStyle)
 newSingleSelectStyle['single-select-input'].margin = '0rem 2rem 0rem 0rem'

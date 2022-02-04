@@ -7,6 +7,7 @@ import BreakthroughEnergy from '../../../../core/media/icons/breakthrough_energy
 import Harvard from '../../../../core/media/icons/harvard.png'
 import { ReactComponent as Pen } from '../../../../core/media/icons/pen.svg'
 import { NavBar } from '../../../../core/components'
+import { Main, Offers, Posts } from './components'
 import { useStyles } from './style'
 
 export const Owner = (): JSX.Element => {
@@ -86,6 +87,18 @@ export const Owner = (): JSX.Element => {
           <div className='button-text'>Posts</div>
         </Button>
       </div>
+      {
+        active == 'main' &&
+        <Main />
+      }
+      {
+        active == 'offers' &&
+        <Offers />
+      }
+      {
+        active == 'posts' &&
+        <Posts />
+      }
     </div>
   )
 }

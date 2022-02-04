@@ -12,7 +12,7 @@ export const useStyles = makeStyles({
     color: '#8A8A8A',
     boxSizing: 'border-box',
     '& .title': {
-      color: '#13AA52 !important',
+      color: '#000000 !important',
       fontWeight: 600,
       marginBottom: '0.5rem'
     }

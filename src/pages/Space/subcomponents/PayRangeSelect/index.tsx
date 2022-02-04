@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { SingleSelectInput } from '../../../PageCreator/subcomponents'
+import { SingleSelectInput } from '../../../PageCreator/components'
 import { customStyles } from './customStyles'
 
 interface Props {

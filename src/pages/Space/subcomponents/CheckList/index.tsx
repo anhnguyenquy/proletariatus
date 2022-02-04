@@ -3,7 +3,7 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import FormLabel from '@mui/material/FormLabel'
-import { SelectOption } from '../../../PageCreator/subcomponents'
+import { SelectOption } from '../../../PageCreator/components'
 import { useClasses } from '../../../../core/hooks'
 import { useStyles } from './style'
 

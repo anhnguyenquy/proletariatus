@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef, ChangeEvent, MouseEvent, useLayoutEffect, FormEvent, BaseSyntheticEvent } from 'react'
+import { useState, useEffect, useRef, ChangeEvent, MouseEvent, useLayoutEffect, BaseSyntheticEvent } from 'react'
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { MenuList, MenuItem, ClickAwayListener } from '@mui/material'
 import _ from 'lodash'
 import { skills } from '../../../../core/constants'
-import { SelectOption } from '../../../PageCreator/subcomponents'
+import { SelectOption } from '../../../PageCreator/components'
 import { useStyles } from './style'
 
 interface Props {

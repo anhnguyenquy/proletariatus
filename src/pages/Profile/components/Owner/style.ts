@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles'
 
 export const useStyles = makeStyles({
-  'owner': {
+  owner: {
     width: '100%',
     minHeight: '100%',
     overflowX: 'hidden',

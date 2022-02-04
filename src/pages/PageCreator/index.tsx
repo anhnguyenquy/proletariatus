@@ -2,13 +2,12 @@ import { useState, useEffect, ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
-import { PageIdentityField, LocationField, ContactsField, ProfileDetailsField } from './components'
+import { PageIdentityField, LocationField, ContactsField, ProfileDetailsField } from './fields'
 import { NavBar } from '../../core/components'
 import { useDeviceBreakPoint, useDocumentTitle, useForm } from '../../core/hooks'
 import { ReactComponent as BuildingIcon } from '../../core/media/icons/Building.svg'
 import { ReactComponent as ArrowBack } from '../../core/media/icons/ArrowBack.svg'
-import { pageCreationFormDefaultValue } from './subcomponents'
-import { PageIdentity, Location, Contact, ProfileDetails, PageCreationFormDefaultValue } from './subcomponents/interfaces'
+import { PageIdentity, Location, Contact, ProfileDetails, PageCreationFormDefaultValue, pageCreationFormDefaultValue } from './components'
 import {
   useStylesPC,
   //   useStylesTablet,

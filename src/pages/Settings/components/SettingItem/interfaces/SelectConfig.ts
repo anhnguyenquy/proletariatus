@@ -1,4 +1,4 @@
-import { SelectOption } from '../../../../PageCreator/subcomponents'
+import { SelectOption } from '../../../../PageCreator/components'
 
 export interface SelectConfig {
   placeholder?: string

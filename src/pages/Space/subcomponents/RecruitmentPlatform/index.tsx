@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { SingleSelectInput } from '../../../PageCreator/subcomponents'
+import { SingleSelectInput } from '../../../PageCreator/components'
 
 const customStyles = {
   'single-select-input': {

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import _ from 'lodash'
 import { Button, Dialog } from '@mui/material'
-import { SingleTextInput, Address } from '../../../PageCreator/subcomponents'
+import { SingleTextInput, Address } from '../../../PageCreator/components'
 import {
   AddressSelect,
   PayRangeSelect,
@@ -45,8 +45,6 @@ export const CreateOfferDialog = (props: Props): JSX.Element => {
         resetField('external')
         resetField('additionalQuestions')
         break
-      default:
-      // can't reach this
     }
   }, [formValue.platform])
   return (

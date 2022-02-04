@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react'
 import _ from 'lodash'
 import { FileInput } from '../../../../../../../core/components'
 import BillGatesAva from '../../../../../../../core/media/bill_gates_ava.png'
-import { SingleSelectInput, SingleTextInput } from '../../../../../../PageCreator/subcomponents'
+import { SingleSelectInput, SingleTextInput } from '../../../../../../PageCreator/components'
 import { Button, Dialog } from '@mui/material'
 import {
 	FormInterface,

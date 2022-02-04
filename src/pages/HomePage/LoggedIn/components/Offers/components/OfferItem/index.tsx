@@ -1,4 +1,4 @@
-import garenaAva from '../../../../../../../core/media/garena_ava.png'
+import GarenaAva from '../../../../../../../core/media/icons/garena_ava.png'
 import { useStyles } from './style'
 import { useState, useRef, useEffect } from 'react'
 
@@ -31,7 +31,7 @@ export const OfferItem = (props: Props): JSX.Element => {
 			onMouseUp={() => setBeingClicked(false)}
 		>
 			<div className='ava-container'>
-				<img src={garenaAva} />
+				<img src={GarenaAva} />
 			</div>
 			<div className='main'>
 				<div className={`offer-title ${hovering ? 'hovering' : ''} ${beingClicked ? 'being-clicked' : ''}`}>{offerTitle}</div>

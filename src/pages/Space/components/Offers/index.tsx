@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@mui/material'
-import { SubOfferItem } from '../../../HomePage/LoggedIn/components'
+import { SubOfferItem } from '../../../HomePage/LoggedIn/components/Offers/components'
 import { OfferItem, InfoItem, ApplyDialog } from '../../../HomePage/LoggedIn/components/Offers/components'
 import { useStyles } from './style'
 
@@ -32,6 +32,7 @@ export const Offers = (props: Props): JSX.Element => {
             workplace='Garena'
             location='Hanoi, Vietnam'
             applicantsNo={7}
+            recruiting={true}
           />
           <OfferItem
             expand={() => {
@@ -44,6 +45,7 @@ export const Offers = (props: Props): JSX.Element => {
             workplace='Garena'
             location='Hanoi, Vietnam'
             applicantsNo={7}
+            recruiting={false}
           />
           <OfferItem
             expand={() => {
@@ -56,6 +58,7 @@ export const Offers = (props: Props): JSX.Element => {
             workplace='Garena'
             location='Hanoi, Vietnam'
             applicantsNo={7}
+            recruiting={true}
           />
         </div>
         {expanded && (

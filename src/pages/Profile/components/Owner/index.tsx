@@ -73,18 +73,18 @@ export const Owner = (): JSX.Element => {
           <div className='button-text'>Main</div>
         </Button>
         <Button
-          className={`offers-button ${active == 'offers' ? 'active' : ''}`}
-          variant={`${active == 'offers' ? 'contained' : 'text'}`}
-          onClick={() => { setActive('offers') }}
-        >
-          <div className='button-text'>Offers</div>
-        </Button>
-        <Button
           className={`posts-button ${active == 'posts' ? 'active' : ''}`}
           variant={`${active == 'posts' ? 'contained' : 'text'}`}
           onClick={() => { setActive('posts') }}
         >
           <div className='button-text'>Posts</div>
+        </Button>
+        <Button
+          className={`offers-button ${active == 'offers' ? 'active' : ''}`}
+          variant={`${active == 'offers' ? 'contained' : 'text'}`}
+          onClick={() => { setActive('offers') }}
+        >
+          <div className='button-text'>Offers</div>
         </Button>
       </div>
       {
@@ -92,12 +92,12 @@ export const Owner = (): JSX.Element => {
         <Main />
       }
       {
-        active == 'offers' &&
-        <Offers />
-      }
-      {
         active == 'posts' &&
         <Posts />
+      }
+      {
+        active == 'offers' &&
+        <Offers />
       }
     </div>
   )

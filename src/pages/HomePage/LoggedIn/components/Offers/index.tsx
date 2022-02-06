@@ -13,25 +13,11 @@ import {
 	EmploymentTypeFilter,
 	PayRangeFilter,
 	KeywordFilter,
-	ApplyDialog
+	ApplyDialog,
+  SubOfferItem
 } from './components'
 import { useStyles } from './style'
 
-
-interface SubOfferItemProps {
-	label: string
-	content: string
-}
-
-export const SubOfferItem = (props: SubOfferItemProps): JSX.Element => {
-	const { label, content } = props
-	return (
-		<div className='sub-offer-item'>
-			<div className='sub-offer-item-label'>{label}</div>
-			<div className='sub-offer-item-content'>{content}</div>
-		</div>
-	)
-}
 
 export const Offers = (): JSX.Element => {
 	const { formValue, changeFormValue, resetFormValue } = useForm({
@@ -106,6 +92,7 @@ export const Offers = (): JSX.Element => {
 						workplace='Garena'
 						location='Hanoi, Vietnam'
 						applicantsNo={7}
+            recruiting={true}
 					/>
 					<OfferItem
 						expand={() => {
@@ -118,6 +105,7 @@ export const Offers = (): JSX.Element => {
 						workplace='Garena'
 						location='Hanoi, Vietnam'
 						applicantsNo={7}
+            recruiting={false}
 					/>
 					<OfferItem
 						expand={() => {
@@ -130,6 +118,7 @@ export const Offers = (): JSX.Element => {
 						workplace='Garena'
 						location='Hanoi, Vietnam'
 						applicantsNo={7}
+            recruiting={true}
 					/>
 				</div>
 				{expanded && (

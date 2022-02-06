@@ -4,7 +4,7 @@ import { Owner, Public } from './components'
 
 export const Profile = (): JSX.Element => {
   const { id } = useParams()
-  if (true) { // id == owner
+  if (false) { // id == owner
     return <Owner />
   }
   else return <Public />

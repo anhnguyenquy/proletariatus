@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import _ from 'lodash'
-import { Field } from '../../../../subcomponents'
+import { Field } from '../../../../../Profile/subcomponents'
 import { style } from './style'
 
 // TODO: make the search case-insensitive and highlight the results with the keyword

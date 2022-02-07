@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { createContext, useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import WebFont from 'webfontloader'
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from './core/components/'
 import useStyles from './appStyle'
-import { Login, SignUp, PageManager, HomePage, PageCreator, Settings, Space, Profile } from './pages'
+import { Login, SignUp, PageManager, HomePage, PageCreator, Settings, Space, Profile, Offer } from './pages'
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     lightBackgroundPrimary: true
     red: true
     grey: true
+    rejected: true
   }
 }
 
@@ -18,7 +19,7 @@ type UserContext = {
 
 }
 
-export const UserContext = React.createContext<UserContext>(undefined)
+export const UserContext = createContext<UserContext>(undefined)
 
 const App = () => {
   const classes = useStyles()
@@ -46,6 +47,9 @@ const App = () => {
               <Route path='s' element={<Space />} />
               <Route path='u' element={<Profile />}>
                 <Route path=':id' element={<Profile />} />
+              </Route>
+              <Route path='offer' element={<Offer />}>
+                <Route path=':id' element={<Offer />} />
               </Route>
             </Routes>
           </BrowserRouter>

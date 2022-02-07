@@ -21,9 +21,9 @@ interface Props {
 
 export const OfferItem = (props: Props): JSX.Element => {
   const { expand, /* avaSrc, */ offerTitle, postedBy, space, workplace, location, /* time, */ applicantsNo, recruiting, id } = props
-  const classes = useStyles()
   const [hovering, setHovering] = useState(false)
   const [beingClicked, setBeingClicked] = useState(false)
+  const classes = useStyles()
   return (
     <div className={classes['offer-item']}
       onMouseOver={() => setHovering(true)}

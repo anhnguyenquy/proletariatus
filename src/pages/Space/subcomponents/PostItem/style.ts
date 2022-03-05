@@ -10,8 +10,9 @@ export const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: 'white',
-    margin: '0.25rem',
+    margin: '0.25rem 0',
     height: 'max-content !important',
+    boxSizing: 'border-box',
     '&:hover': {
       border: '1.5px solid #A5A5A5',
     },

@@ -147,7 +147,18 @@ export const style = {
           }
         }
       }
-
+    },
+    '& .copied-notification': {
+      display: 'flex',
+      alignItems: 'center',
+      '& .notification-icon': {
+        color: '#057642',
+      },
+      '& .notification-text': {
+        fontSize: '0.8rem',
+        color: '#057642',
+        marginLeft: '0.25rem'
+      }      
     }
   }
 }

@@ -5,6 +5,7 @@ export const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     marginBottom: '3rem',
+    width: '100%',
     '& .create-post-bar': {
       border: '1.5px solid #E4E6E6',
       borderRadius: '5px',
@@ -14,7 +15,8 @@ export const useStyles = makeStyles({
       alignItems: 'center',
       justifyContent: 'flex-start',
       backgroundColor: 'white',
-      margin: '0.25rem',
+      margin: '1rem 0 0.25rem 0',
+      boxSizing: 'border-box',
       // paddingLeft: '0.5rem',
       '&:hover': {
         border: '1.5px solid #A5A5A5',

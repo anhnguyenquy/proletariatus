@@ -1,14 +1,14 @@
-import { Field } from '../../../../../../subcomponents'
 import { useState, useEffect, useRef, ChangeEvent, MouseEvent, useLayoutEffect, BaseSyntheticEvent } from 'react'
+import Highlighter from 'react-highlight-words'
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { MenuList, MenuItem, ClickAwayListener } from '@mui/material'
 import _ from 'lodash'
+import { Field } from '../../../../../../subcomponents'
 import { skills } from '../../../../../../../../core/constants' // TODO: Delete this later
 import { SelectOption } from '../../../../../../../PageCreator/components'
 import { style } from './style'
 
-// TODO: make the search case-insensitive and highlight the results with the keyword
 // TODO: Enable CV upload
 export const CVsField = (): JSX.Element => {
   const [addingCV, setAddingCV] = useState(false)
@@ -57,6 +57,17 @@ export const CVsField = (): JSX.Element => {
       const newList = []
       filtered.forEach((cv) => {
         newList.push({ display: cv, value: cv })
+      })
+      newList.forEach(option => {
+        option.display = <Highlighter
+          searchWords={[cvInput]}
+          autoEscape={true}
+          highlightStyle={{
+            backgroundColor: 'transparent',
+            fontWeight: 600
+          }}
+          textToHighlight={option.display}
+        />
       })
       setOptions(newList.slice(0, 10))
     }
@@ -111,7 +122,6 @@ export const CVsField = (): JSX.Element => {
           </button>
         }
         {
-          // TODO: Bring 'popup to the front' and prevent middle content from activating X-scroll
           addingCV && cvInput &&
           <ClickAwayListener onClickAway={() => {
             setAddingCV(false)

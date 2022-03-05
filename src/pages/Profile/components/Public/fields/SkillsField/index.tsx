@@ -8,7 +8,6 @@ import { skills } from '../../../../../../core/constants'
 import { SelectOption } from '../../../../../PageCreator/components'
 import { style } from './style'
 
-// TODO: make the search case-insensitive and highlight the results with the keyword
 export const SkillsField = (): JSX.Element => {
   const [addedSkills, setAddedSkills] = useState<string[]>(['Python', 'Java'])
 

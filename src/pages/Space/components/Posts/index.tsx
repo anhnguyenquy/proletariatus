@@ -1,7 +1,11 @@
+import { useState } from 'react'
+import { ClickAwayListener } from '@mui/material'
+import { CreatePostDialog } from '../../../../core/components'
 import { PostItem } from '../../subcomponents'
 import { useStyles } from './style'
 
 export const Posts = (): JSX.Element => {
+  const [dialogOpen, setDialogOpen] = useState(false)
   const classes = useStyles()
   return (
     <div className={classes['posts']}>
@@ -10,7 +14,8 @@ export const Posts = (): JSX.Element => {
           <i className='fas fa-user-circle' />
         </div>
         <div className='input-container'>
-          <input type='text' spellCheck={false} placeholder='Create Post' />
+          <input type='text' spellCheck={false} placeholder='Create Post' onClick={() => { setDialogOpen(true) }} />
+          <CreatePostDialog open={dialogOpen} onClose={() => { setDialogOpen(false) }} />
         </div>
       </div>
       <PostItem

@@ -1,4 +1,4 @@
-import { FocusEvent, useState } from 'react'
+import { useState } from 'react'
 import { CreatePostDialog } from '../../../../../core/components'
 import PostItem from './PostItem'
 import { useStyles } from './style'
@@ -13,8 +13,8 @@ export const Posts = (): JSX.Element => {
           <i className='fas fa-user-circle' />
         </div>
         <div className='input-container'>
-          <input type='text' spellCheck={false} placeholder='Create Post' onFocus={(e: FocusEvent<HTMLInputElement, Element>) => { setDialogOpen(true) }} />
-          <CreatePostDialog open={dialogOpen} onClose={() => { setDialogOpen(false) }} />
+          <input type='text' spellCheck={false} placeholder='Create Post' onClick={() => { setDialogOpen(true) }} />
+          <CreatePostDialog open={dialogOpen} onClose={() => { setDialogOpen(false); console.log('closed') }} />
         </div>
       </div>
       <PostItem

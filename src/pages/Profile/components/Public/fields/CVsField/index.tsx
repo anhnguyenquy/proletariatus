@@ -3,8 +3,6 @@ import _ from 'lodash'
 import { Field } from '../../../../subcomponents'
 import { style } from './style'
 
-// TODO: make the search case-insensitive and highlight the results with the keyword
-// TODO: Enable CV upload
 export const CVsField = (): JSX.Element => {
   const [addedCVs, setAddedCVs] = useState<string[]>(['CS_Resume.pdf', 'PoliSci_Resume.docx'])
 

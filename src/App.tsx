@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import WebFont from 'webfontloader'
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from './core/components/'
-import useStyles from './appStyle'
 import { Login, SignUp, PageManager, HomePage, PageCreator, Settings, Space, Profile, Offer } from './pages'
+import './App.scss'
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
@@ -22,7 +22,6 @@ type UserContext = {
 export const UserContext = createContext<UserContext>(undefined)
 
 const App = () => {
-  const classes = useStyles()
   // const [userData, setUserData] = useState()
   const [loggedIn, setLoggedIn] = useState(true) //default false
   useEffect(() => {
@@ -33,7 +32,7 @@ const App = () => {
     })
   }, [])
   return (
-    <div className={classes.App}>
+    <div className='App'>
       <ThemeProvider theme={theme}>
         <UserContext.Provider value={loggedIn}>
           <BrowserRouter>

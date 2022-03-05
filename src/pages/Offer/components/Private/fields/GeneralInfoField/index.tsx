@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Tooltip, ClickAwayListener, Box } from '@mui/material'
 import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt'
 import { FaPhoneAlt } from '@react-icons/all-files/fa/FaPhoneAlt'
 import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope'
+import { FaCheckCircle } from '@react-icons/all-files/fa/FaCheckCircle'
 import { Field } from '../../../../../Profile/subcomponents'
 import { Status } from '../../'
 import { style } from './style'
-import { openInNewTab } from '../../../../../../core/helpers'
 
 interface Props {
   status: string
@@ -15,9 +15,11 @@ interface Props {
 }
 
 export const GeneralInfoField = (props: Props): JSX.Element => {
+  const { status, setStatus } = props
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
-  const { status, setStatus } = props
+  const anchorRef = useRef(null)
+  const [showingNotification, setShowingNotification] = useState(false)
   return (
     <Field title="Bill Gate's Application" sx={style}>
       <div className='headline'>Co-chair, Bill & Melinda Gates Foundation</div>
@@ -76,13 +78,22 @@ export const GeneralInfoField = (props: Props): JSX.Element => {
           title={
             <ClickAwayListener onClickAway={() => { setOpen(false) }}>
               <Box>
-                <button className='option-button' onClick={() => { navigate('/u') }}>
+                <button className='option-button' onClick={() => {
+                  navigate('/u')
+                  setOpen(false)
+                }}>
                   <FaUserAlt className='tooltip-icon' />
                   <span className='tooltip-texts'>
                     <span className='main-text'>See full profile</span>
                   </span>
                 </button>
-                <button className='option-button' onClick={() => { openInNewTab('mailto:evil_murderer666@profits.com') }}>
+                <button className='option-button' onClick={() => {
+                  anchorRef.current.click()
+                  setOpen(false)
+                }}
+                >
+                  {/* //@ts-ignore */}
+                  <a href='mailto:evil_murderer666@profits.com' target='_blank' rel='noreferrer' style={{ display: 'none' }} ref={anchorRef} />
                   <FaEnvelope className='tooltip-icon' />
                   <span className='tooltip-texts'>
                     <span className='main-text'>evil_murderer666@profits.com</span>
@@ -90,9 +101,13 @@ export const GeneralInfoField = (props: Props): JSX.Element => {
                   </span>
                 </button>
                 {/*
-                  // TODO: Add notifications and fix mailto error
                 */}
-                <button className='option-button' onClick={() => { navigator.clipboard.writeText('+12345678') }}>
+                <button className='option-button' onClick={() => {
+                  navigator.clipboard.writeText('+12345678')
+                  setOpen(false)
+                  setShowingNotification(true)
+                  setTimeout(() => setShowingNotification(false), 3000)
+                }}>
                   <FaPhoneAlt className='tooltip-icon' />
                   <span className='tooltip-texts'>
                     <span className='main-text'>+12345678</span>
@@ -107,7 +122,14 @@ export const GeneralInfoField = (props: Props): JSX.Element => {
             <span className='text'>More...</span>
           </Button>
         </Tooltip>
-      </div>
+        {
+          showingNotification &&
+          <span className='copied-notification'>
+            <FaCheckCircle className='notification-icon' />
+            <span className='notification-text'>Phone number copied</span>
+          </span>
+        }
+      </div >
     </Field >
   )
 }

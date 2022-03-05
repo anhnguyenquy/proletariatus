@@ -62,7 +62,8 @@ export const style = {
       display: 'flex',
       justifyContent: 'flex-start',
       '& .left': {
-        width: '67.5%',
+        width: '28.6875rem',
+        boxSizing: 'border-box',
         paddingLeft: '2rem',
         paddingTop: '5.25rem',
         '& .profile-name': {
@@ -199,10 +200,10 @@ export const style = {
           }
         }
       },
-      // TODO: Make this consistent with the other billboard
       '& .right': {
         height: '100%',
-        width: '32.5%',
+        width: '13.8125rem',
+        boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
         position: 'relative',

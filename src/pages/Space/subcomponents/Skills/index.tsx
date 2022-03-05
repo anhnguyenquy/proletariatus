@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, ChangeEvent, MouseEvent, useLayoutEffect, BaseSyntheticEvent } from 'react'
+import Highlighter from 'react-highlight-words'
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { MenuList, MenuItem, ClickAwayListener } from '@mui/material'
@@ -55,10 +56,21 @@ export const Skills = (props: Props): JSX.Element => {
 
   useEffect(() => {
     if (skillInput) {
-      const filtered = skills.filter((skill) => skill.includes(skillInput))
+      const filtered = skills.filter((skill) => skill.toLowerCase().includes(skillInput.toLowerCase()))
       const newList = []
       filtered.forEach((skill) => {
         newList.push({ display: skill, value: skill })
+      })
+      newList.forEach(option => {
+        option.display = <Highlighter
+          searchWords={[skillInput]}
+          autoEscape={true}
+          highlightStyle={{
+            backgroundColor: 'transparent',
+            fontWeight: 600
+          }}
+          textToHighlight={option.display}
+        />
       })
       setOptions(newList.slice(0, 10))
     }
@@ -119,7 +131,6 @@ export const Skills = (props: Props): JSX.Element => {
           </button>
         }
         {
-          // TODO: Bring 'popup to the front' and prevent middle content from activating X-scroll
           addingSkill && skillInput &&
           <ClickAwayListener onClickAway={() => {
             setAddingSkill(false)

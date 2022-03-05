@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect } from 'react'
 import Select from 'react-select'
 import _ from 'lodash'
-import { Button, Dialog } from '@mui/material'
+import { Button, Dialog, ClickAwayListener } from '@mui/material'
 import { useForm } from '../../hooks'
 import { GiSelect } from '@react-icons/all-files/gi/GiSelect'
 import { useStyles } from './style'
@@ -34,7 +34,6 @@ export const CreatePostDialog = (props: Props): JSX.Element => {
     { value: 's/React', label: 's/React' },
     { value: 's/MongoDB', label: 's/MongoDB' }
   ]
-  // TODO: Fix error: unable to close dialog when click outside
   return (
     <Dialog
       className={classes['create-post-dialog']}

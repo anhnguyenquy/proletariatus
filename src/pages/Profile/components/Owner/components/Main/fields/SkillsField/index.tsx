@@ -1,14 +1,14 @@
-import { Field } from '../../../../../../subcomponents'
 import { useState, useEffect, useRef, ChangeEvent, MouseEvent, useLayoutEffect, BaseSyntheticEvent } from 'react'
+import Highlighter from 'react-highlight-words'
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { MenuList, MenuItem, ClickAwayListener } from '@mui/material'
 import _ from 'lodash'
+import { Field } from '../../../../../../subcomponents'
 import { skills } from '../../../../../../../../core/constants'
 import { SelectOption } from '../../../../../../../PageCreator/components'
 import { style } from './style'
 
-// TODO: make the search case-insensitive and highlight the results with the keyword
 export const SkillsField = (): JSX.Element => {
   const [addingSkill, setAddingSkill] = useState(false)
   const [skillInput, setSkillInput] = useState('')
@@ -52,10 +52,21 @@ export const SkillsField = (): JSX.Element => {
 
   useEffect(() => {
     if (skillInput) {
-      const filtered = skills.filter((skill) => skill.includes(skillInput))
+      const filtered = skills.filter((skill) => skill.toLowerCase().includes(skillInput.toLowerCase()))
       const newList = []
       filtered.forEach((skill) => {
         newList.push({ display: skill, value: skill })
+      })
+      newList.forEach(option => {
+        option.display = <Highlighter
+          searchWords={[skillInput]}
+          autoEscape={true}
+          highlightStyle={{
+            backgroundColor: 'transparent',
+            fontWeight: 600
+          }}
+          textToHighlight={option.display}
+        />
       })
       setOptions(newList.slice(0, 10))
     }
@@ -110,7 +121,6 @@ export const SkillsField = (): JSX.Element => {
           </button>
         }
         {
-          // TODO: Bring 'popup to the front' and prevent middle content from activating X-scroll
           addingSkill && skillInput &&
           <ClickAwayListener onClickAway={() => {
             setAddingSkill(false)

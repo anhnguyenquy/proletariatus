@@ -45,7 +45,6 @@ export const Space = (): JSX.Element => {
           </div>
           <Line />
           {
-            // TODO: Try to unite offers and posts components
             active == 'offers' ?
               <Offers setOffersExpanded={(status: boolean) => setOffersExpanded(status)} />
               :

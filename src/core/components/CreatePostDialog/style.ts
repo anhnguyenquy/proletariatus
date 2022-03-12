@@ -5,7 +5,7 @@ export const useStyles = makeStyles({
     '& .MuiDialog-container': {
       '& .MuiPaper-root': {
         maxWidth: 'none',
-        overflow: 'visible',
+        overflowX: 'visible',
         '& .dialog-content': {
           width: '45rem',
           height: '33rem',
@@ -45,7 +45,7 @@ export const useStyles = makeStyles({
                 fontSize: '0.8rem',
                 color: '#8A8A8A'
               },
-              '& .description': {
+              '& .chars-remaining': {
                 fontSize: '0.7rem',
                 color: '#8A8A8A',
                 marginTop: '0.5rem'

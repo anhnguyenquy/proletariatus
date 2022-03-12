@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import Select from 'react-select'
 import _ from 'lodash'
 import { Button, Dialog, ClickAwayListener } from '@mui/material'
@@ -28,6 +28,7 @@ export const CreatePostDialog = (props: Props): JSX.Element => {
 
   }
   const { formValue, changeFormValue, resetFormValue, resetField } = useForm<PostCreationFormDefaultValue>(postCreationFormDefaultValue)
+  const [charsRemaining, setCharsRemaining] = useState(10)
   const classes = useStyles()
   const options = [
     { value: 's/CompSci', label: 's/CompSci' },
@@ -85,10 +86,11 @@ export const CreatePostDialog = (props: Props): JSX.Element => {
               onChange={(newValue) => {
                 changeFormValue('content', newValue)
               }}
-              max={3000}
+              setCharsRemaining={(num) => { setCharsRemaining(num) }}
+              max={10}
             />
-            <div className='description'>
-              What can applicants gain from your offer? (3000 characters remaining)
+            <div className='chars-remaining'>
+              {charsRemaining} characters remaining
             </div>
           </div>
         </div>

@@ -34,7 +34,7 @@ export const FileUploadPrompt = (props: Props): JSX.Element => {
       {title && <div className='prompt-title'>{title}</div>}
       <div className={`upload-container ${file && 'uploaded'}`}>
         {/* 
-          // TODO: Ava preview
+          // TODO: Ava prevew -> react-avatar-edit
         */}
         {
           file ?
